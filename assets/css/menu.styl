@@ -16,25 +16,43 @@
   font-weight normal
   font-style normal
 
+html, body
+  margin 0
+
+body
+  background-color #D33534
+
 h1, h2, h5, nav
   font-family UbuntuRegular
   margin auto
 
-h1
-  position relative
-  z-index 2
-  text-align center
-  font-size 64px
-  color #DEDEDE
-  margin-top 20%
+#menu
+  margin-bottom 200px
 
-h2
-  position absolute
-  z-index 1
-  font-size 400px
-  color #DB4342
-  margin-top -200px
-  margin-left 200px
+#Banner
+  width 100%
+  overflow hidden
+  position relative
+
+  h1
+    font-size 64px
+    margin-top -150px
+
+  h2
+    font-size 200px
+    margin-left 60px
+
+  @media screen and (min-device-width: 800px)
+    h1
+      text-align center
+      font-size 64px
+      color #DEDEDE
+      margin-top -260px
+      
+    h2
+      font-size 400px
+      z-index -1
+      color #DB4342
 
 h5
   text-align left
@@ -48,7 +66,6 @@ h5
   text-decoration underline
 
 nav
-  position absolute
   z-index 2
   margin 0
   height auto
@@ -58,9 +75,6 @@ nav
     list-style-type none
     display inline
     a
-      -webkit-transition-property background-color
-      -webkit-transition-duration .5s
-      -webkit-transition-timing-function ease
       transition-property background-color
       transition-duration .5s
       transition-timing-function ease
@@ -69,6 +83,7 @@ nav
       font-weight bold
       color #333333
       background-color transparent
+
       &:hover
         color #FFFFFF
         background-color #BD1311
@@ -97,6 +112,10 @@ nav
           padding-top 10px
           left 30%
 
+section.container
+  margin-left 10px
+  margin-right 10px
+
 img
   margin 5px
   border 1px solid black
@@ -115,6 +134,7 @@ h3
   padding-left 30px
   padding-top 20px
   background-color #BD1311
+  color: #fff
 
 th
   margin-top 0
@@ -134,24 +154,18 @@ article
   border-bottom 2px solid black
   padding-left 10px
   padding-right 10px
-
+/*
 footer
   color #333333
-  margin auto auto auto auto
-  width 800px
+  margin auto
   background-color #AEA79F
   background-position center center
   background none repeat scroll 0 0 #999999
   height auto
-
+*/
 #menu
   vertical-align middle
   width 100%
-
-#backgroundMenu
-  position relative
-  z-index 3
-  background-color #D33534
 
 #subNavUnderline
   border-left 1px solid #999999
@@ -170,20 +184,24 @@ footer
   padding-left 30px
   padding-top 20px
   background-color #77216F
-  color #FFFFFF
+  color white
 
 .container
-  display none
   z-index 2
   color #333333
-  margin-top 300px
-  margin-left 300px
-  width 800px
+  margin-top 50%
+  margin-left auto
+  margin-right auto
   background-position center center
-  background #fff
+  background #E0E0E0
   height auto
+  border-radius: 10px
+
+  article:last-child
+    border-bottom none
+    padding-bottom 1%
+    margin-bottom 10px
 
 .pSmall
   font-size 14px
   color inherit
-

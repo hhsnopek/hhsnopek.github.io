@@ -10,6 +10,13 @@
   font-weight: normal;
   font-style: normal;
 }
+html,
+body {
+  margin: 0;
+}
+body {
+  background-color: #d33534;
+}
 h1,
 h2,
 h5,
@@ -17,21 +24,34 @@ nav {
   font-family: UbuntuRegular;
   margin: auto;
 }
-h1 {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  font-size: 64px;
-  color: #dedede;
-  margin-top: 20%;
+#menu {
+  margin-bottom: 200px;
 }
-h2 {
-  position: absolute;
-  z-index: 1;
-  font-size: 400px;
-  color: #db4342;
-  margin-top: -200px;
-  margin-left: 200px;
+#Banner {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#Banner h1 {
+  font-size: 64px;
+  margin-top: -150px;
+}
+#Banner h2 {
+  font-size: 200px;
+  margin-left: 60px;
+}
+@media screen and (min-device-width: 800px) {
+  #Banner h1 {
+    text-align: center;
+    font-size: 64px;
+    color: #dedede;
+    margin-top: -260px;
+  }
+  #Banner h2 {
+    font-size: 400px;
+    z-index: -1;
+    color: #db4342;
+  }
 }
 h5 {
   text-align: left;
@@ -45,7 +65,6 @@ h5 {
   text-decoration: underline;
 }
 nav {
-  position: absolute;
   z-index: 2;
   margin: 0;
   height: auto;
@@ -57,9 +76,6 @@ nav li {
   display: inline;
 }
 nav li a {
-  -webkit-transition-property: background-color;
-  -webkit-transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease;
   -webkit-transition-property: background-color;
   -moz-transition-property: background-color;
   -o-transition-property: background-color;
@@ -109,6 +125,10 @@ nav ul li:hover > ul {
   padding-top: 10px;
   left: 30%;
 }
+section.container {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 img {
   margin: 5px;
   border: 1px solid #272727;
@@ -131,6 +151,7 @@ h3 {
   padding-left: 30px;
   padding-top: 20px;
   background-color: #bd1311;
+  color: #fff;
 }
 th {
   margin-top: 0;
@@ -151,23 +172,18 @@ article {
   padding-left: 10px;
   padding-right: 10px;
 }
-footer {
-  color: #333;
-  margin: auto auto auto auto;
-  width: 800px;
-  background-color: #aea79f;
-  background-position: center center;
-  background: none repeat scroll 0 0 #999;
-  height: auto;
-}
+/*
+footer
+  color #333333
+  margin auto
+  background-color #AEA79F
+  background-position center center
+  background none repeat scroll 0 0 #999999
+  height auto
+*/
 #menu {
   vertical-align: middle;
   width: 100%;
-}
-#backgroundMenu {
-  position: relative;
-  z-index: 3;
-  background-color: #d33534;
 }
 #subNavUnderline {
   border-left: 1px solid #999;
@@ -189,15 +205,24 @@ footer {
   color: #fff;
 }
 .container {
-  display: none;
   z-index: 2;
   color: #333;
-  margin-top: 300px;
-  margin-left: 300px;
-  width: 800px;
+  margin-top: 50%;
+  margin-left: auto;
+  margin-right: auto;
   background-position: center center;
-  background: #fff;
+  background: #e0e0e0;
   height: auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+.container article:last-child {
+  border-bottom: none;
+  padding-bottom: 1%;
+  margin-bottom: 10px;
 }
 .pSmall {
   font-size: 14px;
