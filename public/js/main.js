@@ -1,8 +1,1 @@
-(function() {
-  var js;
-
-  js = ["http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"];
-
-  require(js, function() {});
-
-}).call(this);
+!function(){var a;a=["http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"],require(a,function(){})}.call(this);
