@@ -1,0 +1,1 @@
+/usrdata/web/hhsnopek.com/assets/components/jquery/README.md
