@@ -1,122 +1,78 @@
-section#Banner
-  h2 Henry
-  h1 Snopek
-  nav#menu
-    ul
-      li
-        a(href='#Biography') Biography
-      li#subNavUnderline
-        | MARKETABILITY
-        b :
-      li
-        a(href='#Resume') Resume
-      li
-        a(href='#Career_Aspirations') Career Aspirations
-section.container
-  article#Biography
-    h3 Biography
-    span(style='left: auto; padding-right: 10px;')
-      img(src='img/BP1.png', alt='Picture of Henry Snopek', style="max-width:100%;")
-    p
-      | I am Henry Snopek, the developer of this site. I currently go to school at Waukesha North High School in Waukesha, Wisconsin. I will be attending Carroll University, and my intended major is computer science. During my free time, I am learning about computer security. My career goal is to work for the Government, or for a private corporation. On my path, my plans include obtaining multiple certifications in the computer science field. I currently help multiple people with computer issues and questions. I also attend dc414(Milwaukee local area Defcon group) regularly and learn, particapate, and teach. This year I will be attending Defcon 21 and possibly BlackHat.
-  article#Resume
-    h3 Resume
-    h5 GOAL - Short Term
-    p
-      span.pSmall
-        | I would like to continue to obtain knowledge in the Information Technology area to further my education in Networking and Security.
-      | I have worked with counselors and mentors on an educational blueprint to prepare myself for college.
-    h5 GOAL - Long Term
-    p
-      span.pSmall
-        | I would like to get a Bachelor of Science Degree in Information Technology, Network Administration.
-      | Become an Impact player for a Business that offers challenges and opportunities to learn and grow.
-    table
-      th Education
-      tr
-        td
-          ul
-            li Waukesha North High School
-            li Waukesha, Wisconsin
-            li Graduation: June 2013
-        td
-          ul
-            li General Studies
-            li College Prep Classes
-            li Honors Roll 2 Semesters
-            li GPA 3.3
-    table
-      th Professional Experience
-      tr
-        td
-          ul
-            li November 2011 - January 2012
-            li Sales Associate
-        td
-          ul
-            li Best Buy - Delafield, Wisconsin
-            li Sales Associate (Seasonal Assistance)
-            li Assisted Customers with Product Advice and Differentiation
-            li Responsible for Checkout and Processing of Orders
-            li Learned Point of Sale System for Best Buy
-            li Interacted with Geek Squad at Best Buy
-      tr
-        td
-          ul
-            li November 2012 - Present
-            li Electronics Team Member
-        td
-          ul
-            li Target - Waukesha, Wisconsin
-            li Electronics Team Member
-            li Assist Guests with Product Advice and Differentiation
-            li Responsible for Checkout, Attaining Products for Guest, and Team Member tasks
-            li Use Variations of Point of Sale System for Target
-    table
-      th Qualifications
-      tr
-        td
-          ul
-            li Team Player and Excellent Social Skills
-            li Member of 4 Time State Championship Marching Band
-            li Wrote Music for the Drum Section of the Marching Band
-            li Varsity Soccer 3 of 4 Years
-            li Time Management - Band, Sports, Work, and School
-          ul
-            li Working on Certified Ethical Hacker (CEHv7)
-            li Knowledgeable on TCP/IP Suite and LAN Basics
-            li Attends Cisco Online Training Sessions
-          ul
-            li Working on Security Awareness - Industry
-            li Usage with Penetesting Tools - BackTrack 5 r3, Back Box, BlackBuntu
-            li
-              | Proficient in Microsoft Office Suite, OS X Office Suite, LibreOffice Suite, OpenOffice Suite, and Google Docs
-            li 
-              | Knowledgeable with python scripting and web design
-          ul 
-            li
-              b Projects:
-            li
-              a(href='http://java-exploit.com') Java-Exploit (Web App)
-            li
-              a(href='https://github.com/HHSnopek/HHSnopek.com') HHSnopek.com(Current Site)
-          ul
-            li 
-              b Projects Contributed to:
-            li
-              a(href='https://github.com/slang800/shiva-client') shiva-client
-            li
-              a(href='https://github.com/dc414/SNMP_Scanner') SNMP Scanner
-  article#Career_Aspirations
-      h3 Career Aspirations
-      h5 Network Security
+#container
+  article#about
+    .section
+      span
+        img(src='img/BP1.png', alt='Picture of Henry Snopek')
+        img(src='img/phonecube.svg')
       p
-        | Network Security is my main goal. Making sure that people around the world are safe and secure when accessing private information, sending e-mails, etc.
-      h5 Network Administration
-      p
-        | As I pursue network security, I will be taking the challenge to be a Network Admin. This will allow me to grow my experience and knowledge.
-      h5 CEH v7 Certification
-      p
-        | Certified Ethical hacker v7 certification is something that means a lot to me. This certification is in progress.
-script(src="lodash.custom.js")
-script(src="js/components/backbone.js")
+        | Hello, I'm Henry Snopek. I currently attend Carroll University, majoring in computer science. I'm working on multiple projects currently, check them out!
+
+  article#resume
+    .section
+      h4#education Education
+      ul
+        li Carroll University
+        li Waukesha, Wisconsin
+        li Class of 2017
+      ul
+        li Waukesha North High School
+        li Waukesha, Wisconsin
+        li 2013 Graduate
+        li General Studies
+        li College Prep Classes
+        li GPA 3.3
+    .section
+      h4#experience Professional Experience
+      ul#target
+        li Target - Waukesha, Wisconsin
+        li November 2012 - Present
+        li Presentation, Eleconics, Sales Floor Team Member
+        li Assist Guests with product advice and differentiation
+        li Re-structure isles according to schematics
+      ul#bestbuy
+        li Best Buy - Delafield, Wisconsin
+        li November 2011 - January 2012
+        li Sales Associate (Seasonal Assistance)
+        li Assisted Customers with product advice and differentiation
+    .section
+      h4#assets Skills/Assets
+      ul
+        li Team Player and Excellent Social Skills
+        li Time Management - (Example: Band, Sports, Work, and School)
+        li Web design with html, css, javascript, jquery
+        li Server-side: nginx, python, nodejs
+        li Programming knowledge with python
+        li Knowledgeable on TCP/IP suite and LAN basics
+        li Use and knowledge with Linux, Windows, and Mac OS's
+        li Usage with Penetesting Tools - Kali Linux, Backack 5 r3, Back Box, BlackBuntu
+        li
+          | Proficient in Microsoft Office, OS X Office, OpenOffice, LibreOffice suites, and Google Docs
+    .section
+      ul#projects
+        h4
+          b Projects:
+        li
+          a(href='http://slideshowforglass.com') Slideshow for Glass
+        li
+          a(href='http://java-exploit.com') Java-Exploit
+        h4 
+          b Projects Conibuted to:
+        li
+          a(href='https://github.com/dc414/SNMP_Scanner') SNMP Scanner
+
+  //article#careeraspirations
+    h3 Career Aspirations
+    h5 Network Security
+    p
+      | Network Security is my main goal. Making sure that people around the world are safe and secure when accessing private information, sending e-mails, etc.
+    h5 Network Adminisation
+    p
+      | As I pursue network security, I will be taking the challenge to be a Network Admin. This will allow me to grow my experience and knowledge.
+    h5 CEH v7 Certification
+    p
+      | Certified Ethical hacker v7 certification is something that means a lot to me. This certification is in progress.   
+
+  .section
+    #contact
+      //development
+      //email
