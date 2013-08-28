@@ -13,11 +13,11 @@ require [
   $.ajax(
     url: '/data/blog.json'
     cache: false
-  ).done(
-    (data) ->
+    success: (data) ->
       for post in data['posts']
         date = moment().from(post['datetime'])
-        $('#blog').append(
+        console.log 'Worked'
+        $('body').append(
           """
           <section>
             <h1 class="title">#{post['title']}</h1>
@@ -27,3 +27,4 @@ require [
           """
         )
   )
+
