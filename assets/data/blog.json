@@ -1,9 +1,14 @@
 {
-	"posts": {
-		"post": {
+	"posts": [
+		{
 			"title": "Test",
 			"datetime": "6/27/2013",
 			"content": "It works!"
+		},
+		{
+			"title": "Test2",
+			"datetime" "6/5/1998"
+			"content": "I am old!"
 		}
-	}
+	]
 }

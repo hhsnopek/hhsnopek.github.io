@@ -15,7 +15,7 @@ require [
     cache: false
     ).done (data) ->
       console.log data['posts']
-      for post in data['posts']['post']
+      for post in data['posts']
         console.log post['datetime']
         date = moment().from(post['datetime'])
         console.log 'Worked'
