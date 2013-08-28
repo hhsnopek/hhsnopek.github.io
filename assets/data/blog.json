@@ -1,0 +1,9 @@
+{
+	"posts": {
+		"post": {
+			"title": "Test",
+			"datetime": "6/27/2013",
+			"content": "It works!"
+		}
+	}
+}
