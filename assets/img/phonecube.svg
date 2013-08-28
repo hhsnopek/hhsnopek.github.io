@@ -1,10 +1,10 @@
 <svg version="1.1"
 	 baseProfile="full"
-	 width="275" height="200"
+	 viewBox="0 0 275 200"
 	 xmlns="http://www.w3.org/2000/svg">
 
 	<!--
-	<rect x="40" y="0" width="200" height="200" rx="10" stroke="white" stroke-width=".5" fill="grey" />
+	<rect x="40" y="0" width="200" height="200" rx="10" stroke="white" stroke-width=".5" fill="#272727" />
 	-->
 	<path d="M 100 50 L 100 150 Q 135,170 175,150 L 175, 50 Q 135,25 100,50" stroke="white" stroke-width="3" fill="none" />
 

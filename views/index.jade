@@ -1,64 +1,87 @@
 #container
   article#about
-    .section
-      span
-        img(src='img/BP1.png', alt='Picture of Henry Snopek')
-        img(src='img/phonecube.svg')
-      p
-        | Hello, I'm Henry Snopek. I currently attend Carroll University, majoring in computer science. I'm working on multiple projects currently, check them out!
+    span
+      img(src='/img/BP1.png', alt='Picture of Henry Snopek')
+    ul
+      li
+        img(src='/img/gplus-32.png')
+        a(href='//plus.google.com/108972071032975834000?prsrc=3') Google +
+      li
+        img(src='/img/twitter.png')#twitter-img
+        a(href='https://twitter.com/HHSnopek') Twitter
+    ul
+      li
+        img(src='/img/GitHubMark32.png')
+        a(href='https://github.com/HHSnopek') GitHub
+      li
+        img(src='/img/facebook29.png')
+        a(href='https://www.facebook.com/henrysnopek') Facebook
+    p
+      | Hello, I'm Henry Snopek. I attend Carroll University, majoring in computer science. I'm working on multiple projects currently, check them out!
 
-  article#resume
-    .section
-      h4#education Education
-      ul
-        li Carroll University
-        li Waukesha, Wisconsin
-        li Class of 2017
-      ul
-        li Waukesha North High School
-        li Waukesha, Wisconsin
-        li 2013 Graduate
-        li General Studies
-        li College Prep Classes
-        li GPA 3.3
-    .section
-      h4#experience Professional Experience
-      ul#target
-        li Target - Waukesha, Wisconsin
-        li November 2012 - Present
-        li Presentation, Eleconics, Sales Floor Team Member
-        li Assist Guests with product advice and differentiation
-        li Re-structure isles according to schematics
-      ul#bestbuy
-        li Best Buy - Delafield, Wisconsin
-        li November 2011 - January 2012
-        li Sales Associate (Seasonal Assistance)
-        li Assisted Customers with product advice and differentiation
-    .section
-      h4#assets Skills/Assets
-      ul
-        li Team Player and Excellent Social Skills
-        li Time Management - (Example: Band, Sports, Work, and School)
-        li Web design with html, css, javascript, jquery
-        li Server-side: nginx, python, nodejs
-        li Programming knowledge with python
-        li Knowledgeable on TCP/IP suite and LAN basics
-        li Use and knowledge with Linux, Windows, and Mac OS's
-        li Usage with Penetesting Tools - Kali Linux, Backack 5 r3, Back Box, BlackBuntu
-        li
-          | Proficient in Microsoft Office, OS X Office, OpenOffice, LibreOffice suites, and Google Docs
-    .section
-      ul#projects
-        h4
-          b Projects:
-        li
-          a(href='http://slideshowforglass.com') Slideshow for Glass
-        li
-          a(href='http://java-exploit.com') Java-Exploit
-        h4 
-          b Projects Conibuted to:
-        li
-          a(href='https://github.com/dc414/SNMP_Scanner') SNMP Scanner
+  nav
+    ul
+      li#blog-link
+        a(href='#blog') Blog
+      li
+        a(href='#projects') Projects
+
+#blog
+
+article#resume
+  .section
+    h4#education Education
+    ulLenovo ideapad u430 touch
+      li Carroll University
+      li Waukesha, Wisconsin
+      li Class of 2017
+    ul
+      li Waukesha North High School
+      li Waukesha, Wisconsin
+      li 2013 Graduate
+      li General Studies
+      li College Prep Classes
+      li GPA 3.3
+  .section
+    h4#experience Professional Experience
+    ul#target
+      li Target - Waukesha, Wisconsin
+      li November 2012 - Present
+      li Presentation, Eleconics, Sales Floor Team Member
+      li Assist Guests with product advice and differentiation
+      li Re-structure isles according to schematics
+    ul#bestbuy
+      li Best Buy - Delafield, Wisconsin
+      li November 2011 - January 2012
+      li Sales Associate (Seasonal Assistance)
+      li Assisted Customers with product advice and differentiation
+  .section
+    h4#assets Skills/Assets
+    ul
+      li Team Player and Excellent Social Skills
+      li Time Management - (Example: Band, Sports, Work, and School)
+      li Web design with html, css, javascript, jquery
+      li Server-side: nginx, python, nodejs
+      li Programming knowledge with python
+      li Knowledgeable on TCP/IP suite and LAN basics
+      li Use and knowledge with Linux, Windows, and Mac OS's
+      li Usage with Penetesting Tools - Kali Linux, Backack 5 r3, Back Box, BlackBuntu
+      li
+        | Proficient in Microsoft Office, OS X Office, OpenOffice, LibreOffice suites, and Google Docs
+  .section
+    ul#projects
+      h4
+        b Projects:
+      li
+        a(href='http://slideshowforglass.com') Slideshow for Glass
+      li
+        a(href='http://java-exploit.com') Java-Exploit
+      h4 
+        b Projects Conibuted to:
+      li
+        a(href='http://roots.cx/') roots
+      li
+        a(href='https://github.com/dc414/SNMP_Scanner') SNMP Scanner
 
   //article#careeraspirations
     h3 Career Aspirations
@@ -71,8 +94,3 @@
     h5 CEH v7 Certification
     p
       | Certified Ethical hacker v7 certification is something that means a lot to me. This certification is in progress.   
-
-  .section
-    #contact
-      //development
-      //email

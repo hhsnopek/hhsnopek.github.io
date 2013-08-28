@@ -1,54 +1,77 @@
 normalize()
 
+//colors
+red = #C60E0A
+orange = #F2A34F
+yellow = #F8CA5C
+green = #06C826
+light-green = #73dc9d
+light-blue = #00CED1
+blue = #00a6fc
+purple = #8E48C2
+white = #fff
+dark-grey = #272727
+grey = #333333
+
 @font-face
   font-family 'Open Sans light'
   src url('/fonts/OpenSanslight.woff')
 
 body
   font-family Open Sans light, sans-serif
-  background url('/img/purpleshape.jpg') repeat fixed
-  color #fff
+  bg('/img/purpleshape.jpg', repeat fixed)
+  color white
 
 img
-  border #000 solid 1px
+  border transparent solid 1px
   border-radius 10px
-  max-width 20%
+  max-width 25%
 
-#about
-  img
-    display inline-block
-    margin-left 18%
-  p
-    display inline-block
-    max-width 90%
+a
+  text-decoration none
+  color light-blue
+  hover-underline()
 
 #container
-  z-index 3
-  margin auto
-  margin-top 5%
-  max-height 500px
-  position relative
+  display block
+  text-align left
+  margin-left 30%
+  margin-top 15%
+  width 500px
+  ul
+    list-style none
+    display inline-block
+
+#about
+  li
+    margin-top 10px
+  a
+    margin-left 10px
 
 #resume
-  .section
-    margin-top 5%
+  display none
 
+#projects
+  display block
 
-.section
-  height 30%
-  margin-top 12%
-  padding-left 25%
-  padding-top 5%
-  padding-bottom 5%
-  background #272727
+#twitter-img
+  width 32px
+
+#blog-link
+  display none
+
+nav
+  text-align center
+  width 100%
+  border-top 1px red solid
   ul
-    max-width 480px
+    margin-right 10px
+  li
+    display inline-block
+    list-style none
+    hover-underline()
+    margin-right 20px
 
-@media screen and (width: 360px)
-  img
-    min-width 30%
-
-  .section
-    font-size 13px
-    padding-left 10%
-    height 20%
+@media screen and (max-width: 1000px)
+  #container
+    width 200px

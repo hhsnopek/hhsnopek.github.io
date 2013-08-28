@@ -1,42 +1,29 @@
 require.config(
-	paths:
-		jquery: '../components/jquery/jquery.min'
-		underscore: '../components/underscore/underscore'
-		Backbone: '../components/backbone/backbone'
-		JSONP: '../js/jsonp'
-
-	shim:
-		underscore:
-			exports: '_'
-		Backbone:
-			deps: ['underscore', 'jquery']
-			exports: 'Backbone'
+  paths:
+    jquery: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min',
+    moment: '//cdnjs.cloudflare.com/ajax/libs/moment.js/2.1.0/moment.min'
 )
 
 require [
-	'jquery',
-	'Backbone',
-	'JSONP',
-], ($, Backbone, JSONP) ->
-	console.log "Loaded: main.coffee"
+  'jquery',
+  'moment',
+], ($, moment) ->
+  console.log "Loaded: main.coffee"
 
-	jsonp.get("#{BACKEND_URL}/?json=1", {}, (data) ->
-		console.log data
-		for post in data['posts']
-			$('body').append(
-				"""
-				<section>
-					<h1 class="title">#{post['title']}</h1>
-					<span class="author">by #{post['author']['name']}</span>
-					#{post['content']}
-				<section>
-				"""
-			)
-	)
-
-# Scroll effects
-	$(window).scroll ->
-		height = $(window).scrollTop()
-		#displayimages() if height > 1000
-		
-	console.log height
+  $.ajax(
+    url: '/data/blog.json'
+    cache: false
+  ).done(
+    (data) ->
+      for post in data['posts']
+        date = moment().from(post['datetime'])
+        $('#blog').append(
+          """
+          <section>
+            <h1 class="title">#{post['title']}</h1>
+            <h5 class="datetime">#{date}</h5>
+            <p>#{post['content']}</p>
+          <section>
+          """
+        )
+  )
