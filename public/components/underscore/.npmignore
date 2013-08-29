@@ -1,1 +1,6 @@
-/usrdata/web/hhsnopek.com/assets/components/underscore/.npmignore
+test/
+Rakefile
+docs/
+raw/
+index.html
+underscore-min.js

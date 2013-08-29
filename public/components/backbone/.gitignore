@@ -1,1 +1,4 @@
-/usrdata/web/hhsnopek.com/assets/components/backbone/.gitignore
+raw
+*.sw?
+.DS_Store
+node_modules

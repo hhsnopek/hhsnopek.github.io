@@ -1,1 +1,5 @@
-/usrdata/web/hhsnopek.com/assets/components/backbone/.travis.yml
+language: node_js
+node_js:
+  - 0.8
+notifications:
+  email: false
