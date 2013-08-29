@@ -8,23 +8,28 @@ require [
   'jquery',
   'moment',
 ], ($, moment) ->
-  console.log "Loaded: main.coffee"
 
   $.ajax(
     url: '/data/blog.json'
     cache: false
-    ).done (data) ->
-      console.log data['posts']
+    ).done( (data) ->
       for post in data['posts']
-        console.log post['datetime']
-        date = moment().from(post['datetime'])
-        console.log 'Worked'
-        $('body').append(
+        date = moment(post['datetime']).fromNow()
+        $('#blog').append(
           """
-          <section>
+          <section class="post">
             <h1 class="title">#{post['title']}</h1>
             <h5 class="datetime">#{date}</h5>
-            <p>#{post['content']}</p>
+            #{post['content']}
           <section>
           """
         )
+    )
+      
+  $('#blog-link').click () ->
+    document.getElementById('projects').style.display = 'none'
+    document.getElementById('blog').style.display = 'block'
+
+  $('#projects-link').click () ->
+    document.getElementById('blog').style.display = 'none'
+    document.getElementById('projects').style.display = 'block'

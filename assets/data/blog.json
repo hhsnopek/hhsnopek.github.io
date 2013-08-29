@@ -1,14 +1,9 @@
 {
 	"posts": [
 		{
-			"title": "Test",
-			"datetime": "6/27/2013",
-			"content": "It works!"
-		},
-		{
-			"title": "Test2",
-			"datetime" "6/5/1998"
-			"content": "I am old!"
+			"title": "Welcome!",
+			"datetime": "00:23 8/29/2013",
+			"content": "<p>Welcome to the site, and thank you for actually reading the blog!</p><p>Lame... yes I know, currently this is a filler and will be removed upon the first actual blog post. I Need to get back to packing, come again soon!</p>"
 		}
 	]
 }

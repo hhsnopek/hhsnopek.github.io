@@ -10,8 +10,9 @@ light-blue = #00CED1
 blue = #00a6fc
 purple = #8E48C2
 white = #fff
-dark-grey = #272727
 grey = #333333
+light-grey = lighten(grey, 20)
+
 
 @font-face
   font-family 'Open Sans light'
@@ -27,17 +28,13 @@ img
   border-radius 10px
   max-width 25%
 
-a
-  text-decoration none
-  color light-blue
-  hover-underline()
-
 #container
   display block
   text-align left
   margin-left 30%
   margin-top 15%
   width 500px
+  height 300px
   ul
     list-style none
     display inline-block
@@ -48,17 +45,50 @@ a
   a
     margin-left 10px
 
-#resume
+#resume, #blog, #projects
   display none
 
 #projects
-  display block
+  margin-bottom 10%
+  a
+    text-decoration none
+  li
+    margin-left 10%
+    display inline
+    list-style none
+  #sfg-img, #thalam-img, #je-img, #snmp-img, #roots-img
+    width 32px
+    rounded()
+    margin-right 10px
+  #description
+    margin-left 15%
+
 
 #twitter-img
   width 32px
 
-#blog-link
-  display none
+#g, #fb, #github, #twitter, #blog-link, #projects-link, #sfg, #thalam, #je, #roots, #snmp
+  text-decoration none
+  color light-blue
+  hover-underline()
+
+#g-img, #fb-img, #github-img, #twitter-img, #sfg-img, #thalam-img, #je-img, #roots-img, #snmp-img
+  text-decoration none
+
+#blog
+  width 67%
+  margin-left 15%
+  padding-top 10px
+  padding-bottom 10px
+  margin-bottom 10px
+  background-color rgba(0,0,0,0.4)
+  border-radius 10px
+  *
+    padding-left 20px
+    padding-right 20px
+
+  .title
+    text-decoration underline
 
 nav
   text-align center
@@ -72,6 +102,50 @@ nav
     hover-underline()
     margin-right 20px
 
+
+
+@media screen and (max-width: 1060px)
+  
+  #projects
+    li
+      display block
+      margin-top 5%
+
+
+
 @media screen and (max-width: 1000px)
+  
   #container
-    width 200px
+    height 500px
+    width 100%
+    margin 0
+  
+    span img
+      width 15%
+      margin-left 10%
+      margin-top 5%
+  
+  #about
+    p
+      width 83%
+      margin-left 10%
+  
+  #blog
+    margin 0
+    width 100%
+    border-radius 0
+
+
+
+@media screen and (max-width: 480px)
+  
+  #container
+    span img
+      width 250px
+      max-width 92px
+
+  #g-img, #fb-img, #github-img, #twitter-img
+    max-width 32px
+
+  #g, #fb, #github, #twitter
+    display none

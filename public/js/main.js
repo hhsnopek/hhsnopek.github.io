@@ -7,23 +7,27 @@
   });
 
   require(['jquery', 'moment'], function($, moment) {
-    console.log("Loaded: main.coffee");
-    return $.ajax({
+    $.ajax({
       url: '/data/blog.json',
       cache: false
     }).done(function(data) {
       var date, post, _i, _len, _ref, _results;
-      console.log(data['posts']);
       _ref = data['posts'];
       _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         post = _ref[_i];
-        console.log(post['datetime']);
-        date = moment().from(post['datetime']);
-        console.log('Worked');
-        _results.push($('body').append("<section>\n  <h1 class=\"title\">" + post['title'] + "</h1>\n  <h5 class=\"datetime\">" + date + "</h5>\n  <p>" + post['content'] + "</p>\n<section>"));
+        date = moment(post['datetime']).fromNow();
+        _results.push($('#blog').append("<section class=\"post\">\n  <h1 class=\"title\">" + post['title'] + "</h1>\n  <h5 class=\"datetime\">" + date + "</h5>\n  " + post['content'] + "\n<section>"));
       }
       return _results;
+    });
+    $('#blog-link').click(function() {
+      document.getElementById('projects').style.display = 'none';
+      return document.getElementById('blog').style.display = 'block';
+    });
+    return $('#projects-link').click(function() {
+      document.getElementById('blog').style.display = 'none';
+      return document.getElementById('projects').style.display = 'block';
     });
   });
 

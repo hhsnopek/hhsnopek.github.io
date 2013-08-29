@@ -258,20 +258,13 @@ img {
   border-radius: 10px;
   max-width: 25%;
 }
-a {
-  text-decoration: none;
-  color: #00ced1;
-  border-bottom: 1px solid transparent;
-}
-a:hover {
-  border-bottom: 1px solid;
-}
 #container {
   display: block;
   text-align: left;
   margin-left: 30%;
   margin-top: 15%;
   width: 500px;
+  height: 300px;
 }
 #container ul {
   list-style: none;
@@ -283,17 +276,99 @@ a:hover {
 #about a {
   margin-left: 10px;
 }
-#resume {
+#resume,
+#blog,
+#projects {
   display: none;
 }
 #projects {
-  display: block;
+  margin-bottom: 10%;
+}
+#projects a {
+  text-decoration: none;
+}
+#projects li {
+  margin-left: 10%;
+  display: inline;
+  list-style: none;
+}
+#projects #sfg-img,
+#projects #thalam-img,
+#projects #je-img,
+#projects #snmp-img,
+#projects #roots-img {
+  width: 32px;
+  -webkit-border-radius: 999px;
+  -moz-border-radius: 999px;
+  -o-border-radius: 999px;
+  -ms-border-radius: 999px;
+  border-radius: 999px;
+  margin-right: 10px;
+}
+#projects #description {
+  margin-left: 15%;
 }
 #twitter-img {
   width: 32px;
 }
-#blog-link {
-  display: none;
+#g,
+#fb,
+#github,
+#twitter,
+#blog-link,
+#projects-link,
+#sfg,
+#thalam,
+#je,
+#roots,
+#snmp {
+  text-decoration: none;
+  color: #00ced1;
+  border-bottom: 1px solid transparent;
+}
+#g:hover,
+#fb:hover,
+#github:hover,
+#twitter:hover,
+#blog-link:hover,
+#projects-link:hover,
+#sfg:hover,
+#thalam:hover,
+#je:hover,
+#roots:hover,
+#snmp:hover {
+  border-bottom: 1px solid;
+}
+#g-img,
+#fb-img,
+#github-img,
+#twitter-img,
+#sfg-img,
+#thalam-img,
+#je-img,
+#roots-img,
+#snmp-img {
+  text-decoration: none;
+}
+#blog {
+  width: 67%;
+  margin-left: 15%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  background-color: rgba(0,0,0,0.4);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+#blog * {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#blog .title {
+  text-decoration: underline;
 }
 nav {
   text-align: center;
@@ -312,8 +387,52 @@ nav li {
 nav li:hover {
   border-bottom: 1px solid;
 }
+@media screen and (max-width: 1060px) {
+  #projects li {
+    display: block;
+    margin-top: 5%;
+  }
+}
 @media screen and (max-width: 1000px) {
   #container {
-    width: 200px;
+    height: 500px;
+    width: 100%;
+    margin: 0;
+  }
+  #container span img {
+    width: 15%;
+    margin-left: 10%;
+    margin-top: 5%;
+  }
+  #about p {
+    width: 83%;
+    margin-left: 10%;
+  }
+  #blog {
+    margin: 0;
+    width: 100%;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -o-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  #container span img {
+    width: 250px;
+    max-width: 92px;
+  }
+  #g-img,
+  #fb-img,
+  #github-img,
+  #twitter-img {
+    max-width: 32px;
+  }
+  #g,
+  #fb,
+  #github,
+  #twitter {
+    display: none;
   }
 }
