@@ -1,9 +1,9 @@
 {
 	"posts": [
 		{
-			"title": "Welcome!",
-			"datetime": "00:23 8/29/2013",
-			"content": "<p>Welcome to the site, and thank you for actually reading the blog!</p><p>Lame... yes I know, currently this is a filler and will be removed upon the first actual blog post. I Need to get back to packing, come again soon!</p>"
+			"title": "Morning Brew with a Kitkat",
+			"datetime": "12:21:51 9/3/2013",
+			"content": "<p>Before I touch on college life, here is an article from <a class='article-link' href='http://www.stavros.io/posts/brilliant-or-insane-code'>Hackernews</a>. My question is , Instead of using man power to figure this out, why not create multiple tests and display the data beautifully within a graph or table? Next week I'll go in depth on this article and explain my thoughts with visual data.</p><p>Google released the name of the next Android version, 4.4, which has been named <a class='article-link' href='http://www.android.com/kitkat/'>Kitkat</a>! Yes, they have join with Nestle to keep adding desserts to the plater.</p><p>College life is amazing; so far it's been like camp, no classes till Thursday, with all of the games we have done! A comedian came in, <a class='article-link' href='www.grantlyon.com'>Grant Lyone</a>, and people almost died from laughter over his jokes! Have you ever heard of a <a class='article-link' href='http://lmgtfy.com/?q=define+mentalist'>mentalist</a>? Well I had the pleasure to watch <a class='article-link' href='http://christophercartermentalist.com/'>Chris Carter</a> read the minds of college students! Of course he showed of his skills of reading expressions, but what really is crazy is when he decided to blind fold himself with a four layered cloth, turned out to 'deflect' bullets, and quarters in his eye sockets; note that he duck taped to his face! After that he decided it was time to read cards off and answered questions that no one should of known. With a quick transition I wanted to add this considering I don't think she believed me when I said I'd post this photo, but I have. Say hello to one of my friends, Allie!</p> <img src='/img/bestfriend.jpg', alt='Alli'>"
 		}
 	]
 }
