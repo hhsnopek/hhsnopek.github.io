@@ -454,7 +454,7 @@ body {
     color: #39f;
   }
   #container #projects {
-    width: 350px;
+    max-width: 80%;
   }
   #container #projects ul {
     width: 100%;
