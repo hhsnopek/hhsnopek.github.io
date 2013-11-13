@@ -365,33 +365,29 @@ body {
 #container #contact #phone:hover {
   border-bottom: 1px solid;
 }
-#projects {
-  position: absolute;
+#container #projects {
   margin-top: 10%;
   margin-bottom: 10%;
-  top: 60%;
-  left: 50%;
-  margin-left: -206.5px;
   max-width: 413px;
 }
-#projects a {
+#container #projects a {
   text-decoration: none;
 }
-#projects ul {
+#container #projects ul {
   list-style: none;
   display: inline-block;
 }
-#projects ul li {
+#container #projects ul li {
   list-style: none;
 }
-#projects ul li:last-child {
+#container #projects ul li:last-child {
   margin-top: 10px;
 }
-#projects .img {
+#container #projects .img {
   margin-right: 10px;
   width: 48px;
 }
-#projects .description {
+#container #projects .description {
   margin-left: 15%;
   color: #000;
 }
@@ -457,19 +453,16 @@ body {
     border-bottom: 1px #39f solid;
     color: #39f;
   }
-  #projects {
-    top: 50%;
-    width: 100%;
-    left: 50px;
+  #container #projects {
+    width: 350px;
   }
-  #projects ul {
-    padding-left: 125px;
+  #container #projects ul {
     width: 100%;
   }
-  #projects ul li {
+  #container #projects ul li {
     padding-top: 10px;
   }
-  #projects ul:first-child {
+  #container #projects ul:first-child {
     margin-bottom: -12px;
   }
 }
