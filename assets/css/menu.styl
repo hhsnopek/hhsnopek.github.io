@@ -1,162 +1,182 @@
 normalize()
 
-//colors
 red = #C60E0A
-orange = #F2A34F
-yellow = #F8CA5C
-green = #06C826
-light-green = #73dc9d
-light-blue = #00CED1
-blue = #00a6fc
-purple = #8E48C2
+light-red = #ff3333
+blue = #3399ff
 white = #fff
-grey = #333333
-light-grey = lighten(grey, 20)
 
 
 @font-face
   font-family 'Open Sans light'
   src url('/fonts/OpenSanslight.woff')
 
+*
+  margin 0
+  padding 0
+
+html
+  height 100%
+
 body
   font-family Open Sans light, sans-serif
-  bg('/img/purpleshape.jpg', repeat fixed)
+  font-weight bold
+  bg('/img/background.jpg',  no-repeat center center fixed)
+  background-size cover
   color white
+  width 100%
 
-img
-  border transparent solid 1px
-  border-radius 10px
-  max-width 25%
+.img
+  width 32px
+  text-decoration none
+  rounded()
+
+.link
+  text-decoration none
+  color light-red
+  hover-underline()
+
 
 #container
+  position absolute
   display block
   text-align left
-  margin-left 30%
-  margin-top 15%
-  width 500px
-  height 300px
+  left 50%
+  margin-left -225px
+  margin-top 10%
+  width 450px
+  
   ul
     list-style none
     display inline-block
-
-#about
-  li
+  
+  #img
     margin-top 10px
-  a
-    margin-left 10px
+    margin-left 25px
+    border transparent solid 1px
+    border-radius 10px
+    max-width 25%
 
-#resume, #blog, #projects
-  display none
+  #about
+    background linear-gradient(top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .40), rgba(0, 0, 0, .25))
+    border-radius 10px 10px 0 0
+    border-bottom 1.5px red solid
+    a
+      margin-left 45px
+    p
+      margin-top -5px
+      padding-left 30px
+      padding-right 10px
+    
+    #media
+      width 280px
+      display inline-block
+      margin-left -40px
+      li
+        display inline-block
+      ul:last-child
+        margin-top 0
+        margin-left 40px
+  
+  #contact
+    background-color light-red
+    border-radius 0 0 10px 10px
+
+    ul
+      padding-left 0
+      width 100%
+      list-style none
+      li
+        padding-left 55px
+        display inline-block
+    #email, #phone
+      text-decoration none
+      color white
+      hover-underline()
+
+
 
 #projects
-  margin-bottom 10%
+  position absolute
+  top 60%
+  left 50%
+  margin-left -206.5px
+  max-width 413px
   a
     text-decoration none
-  li
-    margin-left 10%
-    display inline
+  ul
     list-style none
-  #sfg-img, #thalam-img, #je-img, #snmp-img, #roots-img
-    width 32px
-    rounded()
+    display inline-block
+    li
+      list-style none
+      &:last-child
+        margin-top 10px
+
+  .img
     margin-right 10px
-  #description
+  .description
     margin-left 15%
 
 
-#twitter-img
-  width 32px
 
-#g, #fb, #github, #twitter, #blog-link, #projects-link, #sfg, #thalam, #je, #roots, #snmp
-  text-decoration none
-  color light-blue
-  hover-underline()
-
-#g-img, #fb-img, #github-img, #twitter-img, #sfg-img, #thalam-img, #je-img, #roots-img, #snmp-img
-  text-decoration none
-
-#blog
-  width 67%
-  margin-left 15%
-  padding-top 10px
-  padding-bottom 10px
-  margin-bottom 10px
-  background-color rgba(0,0,0,0.4)
-  border-radius 10px
-  *
-    padding-left 20px
-    padding-right 20px
-
-  .title
-    text-decoration underline
-
-  .article-link
-    text-decoration none
-    color light-blue
-    hover-underline()
+@media screen and (max-width: 550px)
+  
+  #container
+    position static
+    width 100%
     margin 0
     padding 0
-
-  img
-    width 30%
-    border-radius 10px
-
-nav
-  text-align center
-  width 100%
-  border-top 1px red solid
-  ul
-    margin-right 10px
-  li
-    display inline-block
-    list-style none
-    hover-underline()
-    margin-right 20px
-
-
-
-@media screen and (max-width: 1060px)
-  
-  #projects
-    li
-      display block
-      margin-top 5%
-
-
-
-@media screen and (max-width: 1000px)
-  
-  #container
-    height 500px
-    width 100%
-    margin 0
-  
-    span img
-      width 15%
-      margin-left 10%
-      margin-top 5%
-  
-  #about
-    p
-      width 83%
-      margin-left 10%
-  
-  #blog
-    margin 0
-    width 100%
-    border-radius 0
-
-
-
-@media screen and (max-width: 480px)
-  
-  #container
     span img
       width 250px
       max-width 92px
+    
+    #about
+      border-radius 0
 
-  #g-img, #fb-img, #github-img, #twitter-img
-    max-width 32px
+    #contact
+      border-radius 0
+      li
+        padding 0
+        text-align center
 
-  #g, #fb, #github, #twitter
-    display none
+
+
+
+@media screen and (max-width: 425px)
+  
+  #container
+    #contact
+      border-radius 0
+      ul
+        padding-left 0
+        li
+          width 100%
+          padding-left 0
+          padding-bottom 10px
+          &:last-child
+            padding-top 10px
+            padding-bottom 0
+            border-top 1px dashed white
+          #phone, #email
+            text-decoration none
+            color white
+            border-bottom 1px white solid
+            &:hover
+              border-bottom 1px blue solid
+              color blue
+  #projects
+    top 50%
+    width 100%
+    left 50px
+    ul
+      padding-left 125px
+      width 100%
+      li
+        padding-top 10px
+      &:first-child
+        margin-bottom -12px
+
+
+
+@media all and (orientation:landscape)
+  #projects
+    top 100%

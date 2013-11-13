@@ -1,1 +1,0 @@
-/usrdata/web/hhsnopek.com/assets/components/underscore/CONTRIBUTING.md
