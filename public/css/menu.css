@@ -274,7 +274,7 @@ body {
 }
 .link {
   text-decoration: none;
-  color: #f33;
+  color: #c60e0a;
   border-bottom: 1px solid transparent;
 }
 .link:hover {
@@ -367,6 +367,8 @@ body {
 }
 #projects {
   position: absolute;
+  margin-top: 10%;
+  margin-bottom: 10%;
   top: 60%;
   left: 50%;
   margin-left: -206.5px;
@@ -387,9 +389,11 @@ body {
 }
 #projects .img {
   margin-right: 10px;
+  width: 48px;
 }
 #projects .description {
   margin-left: 15%;
+  color: #000;
 }
 @media screen and (max-width: 550px) {
   #container {
@@ -467,10 +471,5 @@ body {
   }
   #projects ul:first-child {
     margin-bottom: -12px;
-  }
-}
-@media all and (orientation:landscape) {
-  #projects {
-    top: 100%;
   }
 }
