@@ -1,173 +1,198 @@
 normalize()
 
-red = #C60E0A
-light-red = #ff3333
-blue = #3399ff
+grey = #333
+green = #66cc33
 white = #fff
+black = #000
 
-
-@font-face
-  font-family 'Open Sans light'
-  src url('/fonts/OpenSanslight.woff')
+@import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700')
 
 *
   margin 0
   padding 0
 
-html
+html, body
+  width 100%
   height 100%
 
 body
-  font-family Open Sans light, sans-serif
-  font-weight bold
-  bg('/img/background.jpg',  no-repeat center center fixed)
-  background-size cover
-  color white
-  width 100%
+  font-family 'Noto Sans', sans-serif
+  color black
+  background-color white
 
 .img
   width 32px
   text-decoration none
   rounded()
 
-.link
-  text-decoration none
-  color red
-  hover-underline()
+.link, #blog a
+  reset-link()
+  color white
+  border-bottom green 1px solid
+  &:hover
+    color green
+    border-bottom white 1px solid
 
 
-#container
-  position absolute
-  display block
-  text-align left
-  left 50%
-  margin-left -225px
-  margin-top 10%
-  width 450px
-  
-  ul
-    list-style none
-    display inline-block
-  
-  #img
-    margin-top 10px
-    margin-left 25px
-    border transparent solid 1px
-    border-radius 10px
-    max-width 25%
+header
+  text-align center
+  color white
+  bg('/img/background.jpeg', no-repeat center center fixed)
+  background-size cover
+  width 100%
+  overflow hidden
+  height 80%
 
-  #about
-    background linear-gradient(top, rgba(0, 0, 0, .45), rgba(0, 0, 0, .40), rgba(0, 0, 0, .25))
-    border-radius 10px 10px 0 0
-    border-bottom 1.5px red solid
-    a
-      margin-left 45px
-    p
-      margin-top -5px
-      padding-left 30px
-      padding-right 10px
-    
-    #media
-      width 280px
-      display inline-block
-      margin-left -40px
-      li
-        display inline-block
-      ul:last-child
-        margin-top 0
-        margin-left 40px
-  
-  #contact
-    background-color light-red
-    border-radius 0 0 10px 10px
+  #inner-container
+    position relative
+    background-color rgba(0,0,0, .35)
+    height 100%
+    width 100%
+    border-bottom 3px solid black
+    font-weight 700
 
-    ul
-      padding-left 0
-      width 100%
-      list-style none
-      li
-        padding-left 55px
-        display inline-block
-    #email, #phone
-      text-decoration none
+    h1
+      padding-top 120px
+      font-size 45px
+      margin 0
+    h3
+      font-size 23px
+
+    #navbar
+      margin-right 50px
+      text-align right
       color white
-      hover-underline()
+      li
+        padding-top 48px
+        font-size 16px
+        display inline-block
+        &:last-child
+          margin-left 20px
+    #name
+      position absolute
+      left 50px
+      padding-top 40px
+      a
+        reset-link()
+        color white
+        font-size 32px
 
+    #media
+      position absolute
+      bottom 0
+      right 50px
+      li
+        margin 5px
+        display inline-block
+        
+        svg
+          display block
+          width 32px
+          height 32px
+        #g:hover g > *
+          fill #FF3333
+        #fb:hover svg > *
+          fill #3B5998
+        #t:hover svg > *
+          fill #33CCFF
+        #gh:hover svg > *
+          fill #666
+        #ln:hover g > *
+          fill #4875B4  
 
+#projects
+  width 60%
+  margin 100px 20% 0 20%
+  padding-bottom 100px
+
+  h1
+    text-align center
+    margin-bottom 2em
+
+  li
+    list-style none
+    margin 2em
+    &:last-child
+      margin-top 10px
+  
+  .img
+    width 48px
+    margin-bottom -1em
+    rounded()
+    &:nth-child(4)
+      border 3px solid lighten(grey, 70)
+  .link
+    font-size 24px
+    margin 1em 2em 1em 1em
+  .description
+    margin-top 2em
+    margin-left 5em
+    color black
+
+  .link
+    padding 3px
+    color black
+    border-bottom 1px solid green
+    &:hover
+      color green
+      border-bottom 1px solid black
+
+#blog
+  border-top 5px solid grey
+  border-bottom 5px solid black
+  background-color #272727
+  color white
+
+  h1
+    text-align center
+
+  li
+    list-style none
+    width 60%
+    margin 100px 20% 100px 20%
+    h2
+      border-left 5px solid green
+      padding-left 1em
+    h3
+      margin 1em
+    p
+      margin-left 2em
+      margin-right 2em
+      font-weight 400
+    hr
+      margin-top 5px
+    pre
+      padding 1em 3em 1em 1em
+      margin 1em 3em 1em 1em
+      background-color grey
+      color white
+
+@media screen and (max-width: 750px)
+  #projects
+    margin-left 10%
+    width 80%
+
+@media screen and (max-width: 600px)
+  *
+    overflow-x hidden
+  #inner-container
+    #navbar
+      padding-top 40px
+    h1
+      padding-top 90px !important
 
   #projects
-    margin-top 10%
-    margin-bottom 10%
-    max-width 413px
-    a
-      text-decoration none
-    ul
-      list-style none
-      display inline-block
-      li
-        list-style none
-        &:last-child
-          margin-top 10px
-
-    .img
-      margin-right 10px
-      width 48px
-    .description
-      margin-left 15%
-      color #000
-
-
-
-@media screen and (max-width: 550px)
-  
-  #container
-    position static
     width 100%
-    margin 0
-    padding 0
-    span img
-      width 250px
-      max-width 92px
-    
-    #about
-      border-radius 0
+    margin-left 0
+    .link
+      font-size 16px
 
-    #contact
-      border-radius 0
-      li
-        padding 0
-        text-align center
+  #blog
+    li
+      width 100%
+      margin-left 1em
 
+@media screen and (max-height: 350px)
+  #inner-container h1 
+    padding-top 0px !important
 
-
-
-@media screen and (max-width: 425px)
-  
-  #container
-    #contact
-      border-radius 0
-      ul
-        padding-left 0
-        li
-          width 100%
-          padding-left 0
-          padding-bottom 10px
-          &:last-child
-            padding-top 10px
-            padding-bottom 0
-            border-top 1px dashed white
-          #phone, #email
-            text-decoration none
-            color white
-            border-bottom 1px white solid
-            &:hover
-              border-bottom 1px blue solid
-              color blue
-    #projects
-      max-width 80%
-      ul
-        width 100%
-        li
-          padding-top 10px
-        &:first-child
-          margin-bottom -12px
