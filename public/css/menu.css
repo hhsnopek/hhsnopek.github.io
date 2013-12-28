@@ -397,13 +397,28 @@ header #inner-container #media li #ln:hover g > * {
   font-weight: 400;
 }
 #blog li hr {
-  margin-top: 5px;
+  margin: 10px 0 10px 0;
 }
 #blog li pre {
   padding: 1em 3em 1em 1em;
   margin: 1em 3em 1em 1em;
   background-color: #333;
   color: #fff;
+}
+#blog li .gallery {
+  text-align: center;
+}
+#blog li div {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 2em 0 0 0;
+}
+#blog li img {
+  display: inline;
+  width: 100%;
+  max-width: 500px;
+  margin: 1em 0 1em 0;
 }
 @media screen and (max-width: 750px) {
   #projects {
