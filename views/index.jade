@@ -46,8 +46,13 @@ header
 
   ul#blog
     h1 Blog
+    ul#blognav
+      li: a(href='#name') Home
+      li#projLink: a(href='#projects') Projects
+      - each post in sort(site.posts, {by: 'date'})
+        li: a(href="##{post.link}")= post.title
     - each post in sort(site.posts, {by: 'date'})
-      li
+      li(id="#{post.link}").section
         h2= post.title
         h3= post.date
         != post.content

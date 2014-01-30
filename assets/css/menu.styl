@@ -179,6 +179,34 @@ header
         max-width 500px
         margin 1em 0 1em 0
 
+  #blognav
+    background-color grey
+    display flex
+    flex-flow row wrap
+    justify-content space-around
+    li
+      width auto
+      margin 10px
+
+  .active
+    background-color rgba(0, 0, 0, 0) !important
+    display block !important
+    position fixed
+    top 10px
+    left 10px
+    border-left 2px solid blue
+
+    li
+      width 50% !important
+      margin 5px 0 0 0 !important
+      padding-left 5px
+      padding-bottom 5px
+
+    #projLink
+      padding-bottom 10px
+      border-bottom 1px solid blue
+
+
 @media screen and (max-width: 750px)
   #projects
     margin-left 10%
