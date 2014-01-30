@@ -1,212 +1,257 @@
-@font-face
-  font-family 'UbuntuRegular'
-  src url('Ubuntu-R-webfont.eot')
-  src url('Ubuntu-R-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Ubuntu-R-webfont.woff') format('woff'),
-         url('Ubuntu-R-webfont.ttf') format('truetype'),
-         url('Ubuntu-R-webfont.svg#UbuntuRegular') format('svg')
-  font-weight normal
-  font-style normal
-  font-family 'CabinRegular'
-  src url('Cabin-Regular-webfont.eot')
-  src url('Cabin-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Cabin-Regular-webfont.woff') format('woff'),
-         url('Cabin-Regular-webfont.ttf') format('truetype'),
-         url('Cabin-Regular-webfont.svg#CabinRegular') format('svg')
-  font-weight normal
-  font-style normal
+normalize()
+
+grey = #333
+green = #66cc33
+white = #fff
+black = #000
+
+@import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700')
+
+*
+  margin 0
+  padding 0
 
 html, body
-  margin 0
+  width 100%
+  height 100%
 
 body
-  background-color #D33534
+  font-family 'Noto Sans', sans-serif
+  color black
+  background-color white
 
-h1, h2, h5, nav
-  font-family UbuntuRegular
-  margin auto
+.img
+  width 32px
+  text-decoration none
+  rounded()
 
-#menu
-  margin-bottom 200px
+.link, #blog a
+  reset-link()
+  color white
+  border-bottom green 1px solid
+  &:hover
+    color green
+    border-bottom white 1px solid
 
-#Banner
+
+header
+  text-align center
+  color white
+  bg('/img/background.jpeg', no-repeat center center fixed)
+  background-size cover
   width 100%
   overflow hidden
-  position relative
+  height 80%
+
+  #inner-container
+    position relative
+    background-color rgba(0,0,0, .35)
+    height 100%
+    width 100%
+    border-bottom 3px solid black
+    font-weight 700
+
+    h1
+      padding-top 120px
+      font-size 45px
+      margin 0
+    h3
+      font-size 23px
+
+    #navbar
+      margin-right 50px
+      text-align right
+      color white
+      li
+        padding-top 48px
+        font-size 16px
+        display inline-block
+        &:last-child
+          margin-left 20px
+    #name
+      position absolute
+      left 50px
+      padding-top 40px
+      a
+        reset-link()
+        color white
+        font-size 32px
+
+    #media
+      position absolute
+      bottom 0
+      right 50px
+      li
+        margin 5px
+        display inline-block
+        
+        svg
+          display block
+          width 32px
+          height 32px
+        #g:hover g > *
+          fill #FF3333
+        #fb:hover svg > *
+          fill #3B5998
+        #t:hover svg > *
+          fill #33CCFF
+        #gh:hover svg > *
+          fill #666
+        #ln:hover g > *
+          fill #4875B4  
+
+#projects
+  width 60%
+  margin 100px 20% 0 20%
+  padding-bottom 100px
 
   h1
-    font-size 64px
-    margin-top -150px
+    text-align center
+    margin-bottom 2em
 
-  h2
-    font-size 200px
-    margin-left 60px
-
-  @media screen and (min-device-width: 800px)
-    h1
-      text-align center
-      font-size 64px
-      color #DEDEDE
-      margin-top -260px
-      
-    h2
-      font-size 400px
-      z-index -1
-      color #DB4342
-
-  @media only screen and (max-device-width: 1024px)
-    h1
-      color white
-
-h5
-  text-align left
-  font-size 18px
-  color #E41919
-  margin-top 3em
-  margin-top 0
-  font-family 'CabinRegular'
-  font-size 17px
-  color inherit
-  text-decoration underline
-
-nav
-  z-index 2
-  margin 0
-  height auto
-  text-align center
-  margin-left -20px
   li
-    list-style-type none
-    display inline
-    a
-      transition-property background-color
-      transition-duration .5s
-      transition-timing-function ease
-      padding 8px 15px
-      text-decoration none
-      font-weight bold
-      color #333333
-      background-color transparent
+    list-style none
+    margin 2em
+    &:last-child
+      margin-top 10px
+  
+  .img
+    width 48px
+    margin-bottom -1em
+    rounded()
+    &:nth-child(4)
+      border 3px solid lighten(grey, 70)
+  .link
+    font-size 24px
+    margin 1em 2em 1em 1em
+  .description
+    margin-top 2em
+    margin-left 5em
+    color black
 
-      &:hover
-        color #FFFFFF
-        background-color #BD1311
-  a
-    display inline-block
-  ul
-    ul
-      display none
-      width auto
-      position absolute
-      margin 0
-      font-size 14px
-      li
-        a
-          float none
-          position relative
-        & > a
-          &:hover
-            color #FFFFFF
-            background-color #BD1311
-    li
-      &:hover
-        & > ul
-          margin-top 5em
-          display block
-          padding-top 10px
-          left 30%
+  .link
+    padding 3px
+    color black
+    border-bottom 1px solid green
+    &:hover
+      color green
+      border-bottom 1px solid black
 
-section.container
-  margin-left auto
-  margin-right auto
-
-img
-  margin 5px
-  border 1px solid black
-  border-radius 6px 6px 6px 6px
-  position relative
-
-h3
-  margin-top 0
-  font-family 'UbuntuRegular'
-  font-size 40px
-  font-style normal
-  font-weight bold
-  text-align left
-  padding-bottom 4px
-  border-bottom 1px dashed black
-  padding-left 30px
-  padding-top 20px
-  background-color #BD1311
-  color: #fff
-
-th
-  margin-top 0
-  font-family 'CabinRegular'
-  font-size 17px
-  color inherit
-  text-decoration underline
-
-article
-  font-family 'CabinRegular'
-  text-align left
-  font-style normal
-  font-weight normal
-  font-size 16px
-  background-color #333333
-  background transparent
-  border-bottom 2px solid black
-  padding-left 10px
-  padding-right 10px
-/*
-footer
-  color #333333
-  margin auto
-  background-color #AEA79F
-  background-position center center
-  background none repeat scroll 0 0 #999999
-  height auto
-*/
-#menu
-  vertical-align middle
-  width 100%
-
-#subNavUnderline
-  border-left 1px solid #999999
-  color #FFFFFF !important
-  padding-left 5px
-
-.articleImportant
-  margin-top 0
-  font-family 'UbuntuRegular'
-  font-size 40px
-  font-style normal
-  font-weight bold
-  text-align left
-  padding-bottom 4px
-  border-bottom 1px dashed black
-  padding-left 30px
-  padding-top 20px
-  background-color #77216F
+#blog
+  border-top 5px solid grey
+  border-bottom 5px solid black
+  background-color #272727
   color white
 
-.container
-  z-index 2
-  color #333333
-  margin-top 50%
-  margin-left auto
-  margin-right auto
-  background-position center center
-  background #E0E0E0
-  height auto
-  border-radius: 10px
-  max-width: 1000px
+  h1
+    text-align center
 
-  article:last-child
-    border-bottom none
-    padding-bottom 1%
-    margin-bottom 10px
+  li
+    list-style none
+    width 60%
+    margin 100px 20% 100px 20%
+    h2
+      border-left 5px solid green
+      padding-left 1em
+    h3
+      margin 1em
+    p
+      margin-left 2em
+      margin-right 2em
+      font-weight 400
+    hr
+      margin 10px 0 10px 0
+    pre
+      padding 1em 3em 1em 1em
+      margin 1em 3em 1em 1em
+      background-color grey
+      color white
+    .gallery
+        text-align center
+      div
+        text-align center
+        font-size 16px
+        font-weight 400
+        margin 2em 0 0 0
+      img
+        display inline
+        width 100%
+        max-width 500px
+        margin 1em 0 1em 0
 
-.pSmall
-  font-size 14px
-  color inherit
+  #blognav
+    background-color grey
+    display flex
+    flex-flow row wrap
+    justify-content space-around
+    li
+      width auto
+      margin 10px
+
+  .active
+    background-color rgba(0, 0, 0, 0) !important
+    display block !important
+    position fixed
+    top 10px
+    left 10px
+    border-left 2px solid blue
+
+    li
+      width 50% !important
+      margin 5px 0 0 0 !important
+      padding-left 5px
+      padding-bottom 5px
+
+    #projLink
+      padding-bottom 10px
+      border-bottom 1px solid blue
+
+
+@media screen and (max-width: 750px)
+  #projects
+    margin-left 10%
+    width 80%
+
+@media screen and (max-width: 700px)
+  *
+    overflow-x hidden
+  #inner-container
+    #navbar
+      padding-top 40px
+    h1
+      padding-top 90px !important
+
+  #projects
+    width 100%
+    margin-left 0
+    .link
+      font-size 16px
+
+  #blog
+    li
+      width 100%
+      margin 100px 0 100px 0
+
+@media screen and (max-width: 555px)
+  #inner-container
+    #name
+      position relative !important
+      left 0 !important
+      padding-top 10px
+      padding-bottom
+    #navbar
+      text-align center !important
+      margin-right 0 !important
+      padding-top 0
+      margin-top -10px
+
+    h1
+      padding-top 20px !important
+
+    #media
+      position relative !important
+      right 0 !important
+      padding-top 30px
+
+  #projects
+    margin-top 0

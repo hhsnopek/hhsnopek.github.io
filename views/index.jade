@@ -1,122 +1,58 @@
-section#Banner
-  h2 Henry
-  h1 Snopek
-  nav#menu
-    ul
-      li
-        a(href='#Biography') Biography
-      li#subNavUnderline
-        | MARKETABILITY
-        b :
-      li
-        a(href='#Resume') Resume
-      li
-        a(href='#Career_Aspirations') Career Aspirations
-section.container
-  article#Biography
-    h3 Biography
-    span(style='left: auto; padding-right: 10px;')
-      img(src='img/BP1.png', alt='Picture of Henry Snopek', style="max-width:100%;")
-    p
-      | I am Henry Snopek, the developer of this site. I currently go to school at Waukesha North High School in Waukesha, Wisconsin. I will be attending Carroll University, and my intended major is computer science. During my free time, I am learning about computer security. My career goal is to work for the Government, or for a private corporation. On my path, my plans include obtaining multiple certifications in the computer science field. I currently help multiple people with computer issues and questions. I also attend dc414(Milwaukee local area Defcon group) regularly and learn, particapate, and teach. This year I will be attending Defcon 21 and possibly BlackHat.
-  article#Resume
-    h3 Resume
-    h5 GOAL - Short Term
-    p
-      span.pSmall
-        | I would like to continue to obtain knowledge in the Information Technology area to further my education in Networking and Security.
-      | I have worked with counselors and mentors on an educational blueprint to prepare myself for college.
-    h5 GOAL - Long Term
-    p
-      span.pSmall
-        | I would like to get a Bachelor of Science Degree in Information Technology, Network Administration.
-      | Become an Impact player for a Business that offers challenges and opportunities to learn and grow.
-    table
-      th Education
-      tr
-        td
-          ul
-            li Waukesha North High School
-            li Waukesha, Wisconsin
-            li Graduation: June 2013
-        td
-          ul
-            li General Studies
-            li College Prep Classes
-            li Honors Roll 2 Semesters
-            li GPA 3.3
-    table
-      th Professional Experience
-      tr
-        td
-          ul
-            li November 2011 - January 2012
-            li Sales Associate
-        td
-          ul
-            li Best Buy - Delafield, Wisconsin
-            li Sales Associate (Seasonal Assistance)
-            li Assisted Customers with Product Advice and Differentiation
-            li Responsible for Checkout and Processing of Orders
-            li Learned Point of Sale System for Best Buy
-            li Interacted with Geek Squad at Best Buy
-      tr
-        td
-          ul
-            li November 2012 - Present
-            li Electronics Team Member
-        td
-          ul
-            li Target - Waukesha, Wisconsin
-            li Electronics Team Member
-            li Assist Guests with Product Advice and Differentiation
-            li Responsible for Checkout, Attaining Products for Guest, and Team Member tasks
-            li Use Variations of Point of Sale System for Target
-    table
-      th Qualifications
-      tr
-        td
-          ul
-            li Team Player and Excellent Social Skills
-            li Member of 4 Time State Championship Marching Band
-            li Wrote Music for the Drum Section of the Marching Band
-            li Varsity Soccer 3 of 4 Years
-            li Time Management - Band, Sports, Work, and School
-          ul
-            li Working on Certified Ethical Hacker (CEHv7)
-            li Knowledgeable on TCP/IP Suite and LAN Basics
-            li Attends Cisco Online Training Sessions
-          ul
-            li Working on Security Awareness - Industry
-            li Usage with Penetesting Tools - BackTrack 5 r3, Back Box, BlackBuntu
-            li
-              | Proficient in Microsoft Office Suite, OS X Office Suite, LibreOffice Suite, OpenOffice Suite, and Google Docs
-            li 
-              | Knowledgeable with python scripting and web design
-          ul 
-            li
-              b Projects:
-            li
-              a(href='http://java-exploit.com') Java-Exploit (Web App)
-            li
-              a(href='https://github.com/HHSnopek/HHSnopek.com') HHSnopek.com(Current Site)
-          ul
-            li 
-              b Projects Contributed to:
-            li
-              a(href='https://github.com/slang800/shiva-client') shiva-client
-            li
-              a(href='https://github.com/dc414/SNMP_Scanner') SNMP Scanner
-  article#Career_Aspirations
-      h3 Career Aspirations
-      h5 Network Security
-      p
-        | Network Security is my main goal. Making sure that people around the world are safe and secure when accessing private information, sending e-mails, etc.
-      h5 Network Administration
-      p
-        | As I pursue network security, I will be taking the challenge to be a Network Admin. This will allow me to grow my experience and knowledge.
-      h5 CEH v7 Certification
-      p
-        | Certified Ethical hacker v7 certification is something that means a lot to me. This certification is in progress.
-script(src="lodash.custom.js")
-script(src="js/components/backbone.js")
+header
+  #inner-container
+    #name: a(href='/').link Henry Snopek
+    ul#navbar
+      li: a(href='#blog').link blog
+      li: a(href='#projects').link projects
+
+    h1 Front-End & Back-End
+    h3 Developer, Designer, Engineer
+
+    ul#media
+      li: a(href='//plus.google.com/108972071032975834000?prsrc=3')#g
+        include ../assets/img/icon-g+.svg
+      li: a(href='//facebook.com/henrysnopek')#fb
+        include ../assets/img/icon-fb.svg
+      li: a(href='//twitter.com/HHSnopek')#t
+        include ../assets/img/icon-twitter.svg
+      li: a(href='//github.com/HHSnopek')#gh
+        include ../assets/img/icon-gh.svg
+      li: a(href='//linkedin.com/in/hhsnopek/')#ln
+        include ../assets/img/icon-ln.svg
+
+#container
+  ul#projects
+    li: h1 Projects
+    li
+      a(href='http://roots.cx/')
+        img(src='/img/roots.svg').img
+      a(href='http://roots.cx/').link roots
+      p.description A toolbox for building simple, beautiful, and efficient products for the web.
+    li
+      a(href='https://github.com/dc414/SNMP_Scanner')
+        img(src='/img/wifi.svg')#wifi.img
+      a(href='https://github.com/dc414/SNMP_Scanner').link SNMP Scanner
+      p.description Scan some ip addresses... maybe you'll find something.
+    li
+      a(href='http://java-exploit.com')
+        img(src='/img/coffee.svg').img
+      a(href='http://java-exploit.com').link Java-Exploit
+      p.description Too many exploits are occuring with Java; sit back with some coffee and never miss one again.
+    li
+      a(href='http://slideshowforglass.com')
+        img(src='/img/Google-Glass-Logo.jpg').img
+      a(href='http://slideshowforglass.com').link Slideshow for Glass
+      p.description View notes on your Glass, change a couple slides, always get an applause.
+
+  ul#blog
+    h1 Blog
+    ul#blognav
+      li: a(href='#name') Home
+      li#projLink: a(href='#projects') Projects
+      - each post in sort(site.posts, {by: 'date'})
+        li: a(href="##{post.link}")= post.title
+    - each post in sort(site.posts, {by: 'date'})
+      li(id="#{post.link}").section
+        h2= post.title
+        h3= post.date
+        != post.content
