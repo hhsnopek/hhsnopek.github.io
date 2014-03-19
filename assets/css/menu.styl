@@ -17,13 +17,36 @@ html, body
 
 body
   font-family 'Noto Sans', sans-serif
-  color black
+  color grey
   background-color white
 
 .img
   width 32px
   text-decoration none
   rounded()
+
+#media
+  li
+    margin 5px
+    display inline-block
+    
+    svg
+      display block
+      width 32px
+      height 32px
+    svg g > *, svg > *
+      fill black
+    #g:hover g > *
+      fill #FF3333
+    #fb:hover svg > *
+      fill #3B5998
+    #t:hover svg > *
+      fill #33CCFF
+    #gh:hover svg > *
+      fill #666
+    #ln:hover g > *
+      fill #4875B4  
+/*
 
 .link, #blog a
   reset-link()
@@ -77,28 +100,6 @@ header
         color white
         font-size 32px
 
-    #media
-      position absolute
-      bottom 0
-      right 50px
-      li
-        margin 5px
-        display inline-block
-        
-        svg
-          display block
-          width 32px
-          height 32px
-        #g:hover g > *
-          fill #FF3333
-        #fb:hover svg > *
-          fill #3B5998
-        #t:hover svg > *
-          fill #33CCFF
-        #gh:hover svg > *
-          fill #666
-        #ln:hover g > *
-          fill #4875B4  
 
 #projects
   width 60%
@@ -181,3 +182,4 @@ header
 
   #projects
     margin-top 0
+*/

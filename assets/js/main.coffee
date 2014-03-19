@@ -3,26 +3,24 @@ require.config(
     jquery: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery'
     underscore: '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore'
     Backbone: '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone'
-    waypoints: '/components/jquery-waypoints/waypoints.min'
+    snap: '//cdnjs.cloudflare.com/ajax/libs/snap.svg/0.1.0/snap.svg-min'
   shim:
     underscore:
       exports: '_'
     Backbone:
       deps: ['underscore', 'jquery']
       exports: 'Backbone'
-    waypoints:
-      deps : ['jquery']
 )
 
 require [
   'jquery',
   'underscore',
   'Backbone',
-  'waypoints',
+  'snap',
 ], ($, _, Backbone) ->
+  console.log 'main loaded'
 
-  #waypoint navbar
-  unless $('#projects').css("width") is "100%"
-    $('#blog').waypoint ->
-      $('#blognav').toggleClass "active"
-      $('#blognavStatic').css "display", "none"
+#TODO
+# create Backbone structure
+# create svg animation for site opener
+# no svg animation on mobile(<= 500px) site
