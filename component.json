@@ -1,0 +1,11 @@
+{
+  "name": "hhsnopek",
+  "main": "public/js/main.js",
+  "dependencies": {
+    "components/jquery": "*",
+    "visionmedia/page.js": "*"
+  },
+  "scripts": [
+    "public/js/main.js"
+  ]
+}
