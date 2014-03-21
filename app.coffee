@@ -1,3 +1,4 @@
+# roots 2.1.2
 # Component Compilation
 roots = require 'roots'
 fs = require 'fs'
@@ -20,14 +21,20 @@ roots.compiler.on('finished', (err) ->
   )
 )
 
-# roots settings
+# Files in this list will not be compiled - minimatch supported
 ignore_files: ['_*', 'readme*', '.gitignore', '.DS_Store', '*.log']
 ignore_folders: ['.git', 'node_modules']
 
-# layouts/templates
-exports.layouts =
+# Layout file config
+# `default` applies to all views. Override for specific
+# views as seen below.
+layouts:
   default: 'layout.jade'
+  # 'special_view.jade': 'special_layout.jade'
 
-# roots locals
+# Locals will be made available on every page. They can be
+# variables or (coffeescript) functions.
 locals:
   title: 'Henry Snopek'
+# Precompiled template path, see http://roots.cx/docs/#precompile
+# templates: 'views/templates'

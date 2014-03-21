@@ -1,7 +1,23 @@
+
+console.log 'main loaded'
+
 require 'page'
 $ = require 'jquery'
 
-console.log 'main loaded'
+# page.js router
+page '/', indexView
+page '/about', aboutView
+page '*', notfoundView
+page()
+
+indexView = () ->
+  console.log 'indexView rendered'
+
+aboutView = () ->
+  console.log 'aboutView rendered'
+
+notfoundView = () ->
+  console.log '404 page rendered'
 
 # canvas fullscreen
 canvas = document.getElementById('mainCanvas')

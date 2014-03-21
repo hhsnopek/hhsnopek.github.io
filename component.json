@@ -2,7 +2,7 @@
   "name": "hhsnopek",
   "main": "public/js/main.js",
   "dependencies": {
-    "components/jquery": "*",
+    "component/jquery": "*",
     "visionmedia/page.js": "*"
   },
   "scripts": [
