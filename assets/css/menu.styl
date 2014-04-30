@@ -16,7 +16,7 @@ legColor = brown
 footColor = brown
 featherColor = light-brown
 
-//@import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700')
+@import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700')
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300')
 
 bodyHeight = 1.25em
@@ -56,33 +56,29 @@ body
     z-index 10
     box-shadow 80px 140px white, -120px -60px white, 70px -40px white, 300px 90px white, 100px -80px white, -220px 60px white, 320px 120px white, -410px 90px white, -20px 220px white, 120px -220px white, 70px -445px white, 400px -360px white, -500px -250px white, -190px -220px white, 480px -150px white, -350px -400px white, 550px -420px white, -75px -370px white
 
+main
+  display none
 
-// document loaded animation
+
+/*
+  document loaded animation
+*/
 .loaded
   header, #name
     opacity 0
-
-    -webkit-animation: appear 2s linear;
-    -moz-animation:    appear 2s linear;
-    -o-animation:      appear 2s linear;
-    animation:         appear 2s linear;
+    -webkit-animation: appear 10s linear;
+    -moz-animation:    appear 10s linear;
+    -o-animation:      appear 10s linear;
+    animation:         appear 10s linear;
     -webkit-animation-fill-mode: forwards;
-    -mox-animation-fill-mode: forwards;
-    -o-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-  
-  #owl
-    top -5em
-    -webkit-animation: owlFlight 2s linear;
-    -moz-animation:    owlFlight 2s linear;
-    -o-animation:      owlFlight 2s linear;
-    animation:         owlFlight 2s linear;
-    -webkit-animation-fill-mode: forwards;
-    -mox-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
-// navigation
+
+/*
+  navigation
+*/
 #navbar
   position absolute
   top 3em
@@ -108,7 +104,9 @@ body
       border-bottom 3px solid white
 
 
-// navigation icon
+/*
+  navigation icon
+*/
 #navicon
   display inline-block
   margin-bottom -23px
@@ -137,7 +135,7 @@ body
     -o-animation:      dissappear .5s linear;
     animation:         dissappear .5s linear;
     -webkit-animation-fill-mode: forwards;
-    -mox-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
@@ -147,7 +145,7 @@ body
     -o-animation:      squishTop .5s linear;
     animation:         squishTop .5s linear;
     -webkit-animation-fill-mode: forwards;
-    -mox-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
@@ -157,7 +155,7 @@ body
     -o-animation:      squishBottom .5s linear;
     animation:         squishBottom .5s linear;
     -webkit-animation-fill-mode: forwards;
-    -mox-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
@@ -168,7 +166,7 @@ body
     -o-animation:      dissappearRev .5s linear;
     animation:         dissappearRev .5s linear;
     -webkit-animation-fill-mode: forwards;
-    -mox-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
@@ -178,7 +176,7 @@ body
     -o-animation:      squishTopRev .5s linear;
     animation:         squishTopRev .5s linear;
     -webkit-animation-fill-mode: forwards;
-    -mox-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
@@ -188,12 +186,14 @@ body
     -o-animation:      squishBottomRev .5s linear;
     animation:         squishBottomRev .5s linear;
     -webkit-animation-fill-mode: forwards;
-    -mox-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
 
-// owl
+/*
+  owl
+*/
 #owlContainer
   font-size 3.5em
   text-align center
@@ -201,23 +201,34 @@ body
   h1
     top 1.28em
     position relative
-    z-index 4
+    z-index 0
     font-family 'Open Sans', sans-serif
     font-weight 300
   
 #owl
   position absolute
-  left 47.6%
+  left 50%
   top 3em
-
+  margin-left -(bodyWidth/2)
+  -webkit-animation 10s linear owlMotion forwards
+  -moz-animation 10s linear owlMotion forwards
+  -o-animation 10s linear owlMotion forwards
+  animation 10s linear owlMotion forwards
   #body
+    position relative
+    z-index -1
     height bodyHeight
     width bodyWidth
     border bodyBorder solid bodyColor
-    color lightblue
     border-radius 50px 50px 5px
+    -webkit-transform rotate(45deg)
+    -moz-transform rotate(45deg)
+    -o-transform rotate(45deg)
     transform rotate(45deg)
     
+  /*
+    Eyes
+  */
   .eye
     width (bodyHeight/4)
     height (bodyWidth/4)
@@ -245,12 +256,15 @@ body
       position absolute
       top (bodyHeight/4)
       right (bodyWidth/3.7)
-      border-color light-brown
+      border-color lighten(brown, 10)
     .pupil
       position absolute
       top (bodyHeight/2.5)
       right (bodyWidth/2.4)
 
+  /*
+    Beak
+  */
   #beak
     position absolute
     top (bodyWidth/2.05)
@@ -263,6 +277,9 @@ body
     background-color grey
     border-left (bodyBorder/2) solid grey
     border-bottom (bodyBorder/2) solid grey
+    -webkit-transform rotate(-45deg)
+    -moz-transform rotate(-45deg)
+    -o-transform rotate(-45deg)
     transform rotate(-45deg)
 
   .feather
@@ -270,6 +287,9 @@ body
     width (bodyWidth/8)
     border-left (bodyBorder/2) solid featherColor
     border-bottom (bodyBorder/2) solid featherColor
+    -webkit-transform rotate(-45deg)
+    -moz-transform rotate(-45deg)
+    -o-transform rotate(-45deg)
     transform rotate(-45deg)
 
   #row1
@@ -297,14 +317,17 @@ body
       .feather
         border-color light-brown
 
+  /*
+    Legs & toes
+  */
   #legs
     .joint, .toe, .leg
       position relative
-      z-index 9999
       height (bodyHeight/8)
       width (bodyWidth/20)
       background-color #ffcc33
       border-radius 1em
+      animation 10s linear legMotion forwards
     .leg
       height (bodyHeight/4)
     .joint
@@ -317,14 +340,23 @@ body
       top 1.3em
       left .5em
       .leg
+        -webkit-transform rotate(45deg)
+        -moz-transform rotate(45deg)
+        -o-transform rotate(45deg)
         transform rotate(45deg)
       #lefttoe
         position absolute
         top .25em
         left -.15em
         .joint
+          -webkit-transform rotate(30deg)
+          -moz-transform rotate(30deg)
+          -o-transform rotate(30deg)
           transform rotate(30deg)
         .toe
+          -webkit-transform rotate(-5deg)
+          -moz-transform rotate(-5deg)
+          -o-transform rotate(-5deg)
           transform rotate(-5deg)
           margin-top -.04em
           margin-left -.03em
@@ -333,19 +365,31 @@ body
         top .27em
         left -.075em
         .joint
+          -webkit-transform rotate(0deg)
+          -moz-transform rotate(0deg)
+          -o-transform rotate(0deg)
           transform rotate(0deg)
         .toe
           margin-top -.04em
+          -webkit-transform rotate(-10deg)
+          -moz-transform rotate(-10deg)
+          -o-transform rotate(-10deg)
           transform rotate(-10deg)
       #righttoe
         position absolute
         top .24em
         left -0.01em
         .joint
+          -webkit-transform rotate(-30deg)
+          -moz-transform rotate(-30deg)
+          -o-transform rotate(-30deg)
           transform rotate(-30deg)
         .toe
           margin-top -.03em
           margin-left .03em
+          -webkit-transform rotate(3deg)
+          -moz-transform rotate(3deg)
+          -o-transform rotate(3deg)
           transform rotate(3deg)
 
     #right
@@ -353,14 +397,23 @@ body
       top 1.3em
       right .5em
       .leg
+        -webkit-transform rotate(-45deg)
+        -moz-transform rotate(-45deg)
+        -o-transform rotate(-45deg)
         transform rotate(-45deg)
       #lefttoe
         position absolute
         top .24em
         right -.18em
         .joint
+          -webkit-transform rotate(-35deg)
+          -moz-transform rotate(-35deg)
+          -o-transform rotate(-35deg)
           transform rotate(-35deg)
         .toe
+          -webkit-transform rotate(5deg)
+          -moz-transform rotate(5deg)
+          -o-transform rotate(5deg)
           transform rotate(5deg)
           margin-top -.04em
           margin-left .03em
@@ -369,20 +422,36 @@ body
         top .27em
         right -.09em
         .joint
+          -webkit-transform rotate(0deg)
+          -moz-transform rotate(0deg)
+          -o-transform rotate(0deg)
           transform rotate(0deg)
         .toe
           margin-top -.04em
+          -webkit-transform rotate(10deg)
+          -moz-transform rotate(10deg)
+          -o-transform rotate(10deg)
           transform rotate(10deg)
       #righttoe
         position absolute
         top .25em
         left .02em
         .joint
+          -webkit-transform rotate(30deg)
+          -moz-transform rotate(30deg)
+          -o-transform rotate(30deg)
           transform rotate(30deg)
         .toe
           margin-top -.03em
           margin-left -.03em
+          -webkit-transform rotate(-5deg)
+          -moz-transform rotate(-5deg)
+          -o-transform rotate(-5deg)
           transform rotate(-5deg)
+  
+  /*
+    Wings
+  */
   #wings
     .folded
       position relative
@@ -390,14 +459,20 @@ body
       height (bodyHeight/5)
       width (bodyWidth/20)
       border (bodyBorder) solid brown
-      background-color brown
-
+      background-color brown 
+      -webkit-animation 10s linear foldedAppearence forwards
+      -moz-animation 10s linear foldedAppearence forwards
+      -o-animation 10s linear foldedAppearence fowards
+      animation 10s linear foldedAppearence fowards
 
     #wing1
       position absolute
       top .65em
       left .12em
-      .folded, .design
+      .folded
+        -webkit-transform rotate(-20deg)
+        -moz-transform rotate(-20deg)
+        -o-transform rotate(-20deg)
         transform rotate(-20deg)
         border-left none
         border-radius 100% / 50%
@@ -408,28 +483,522 @@ body
       position absolute
       top .65em
       right .12em
-      .folded, .design
+      .folded
+        -webkit-transform rotate(20deg)
+        -moz-transform rotate(20deg)
+        -o-transform rotate(20deg)
         transform rotate(20deg)
         border-right none
         border-radius 100% / 50%
         border-top-right-radius 0
         border-bottom-right-radius 0
+  
+  #flying1, #flying2
+    position absolute
+    top .65em
+    .wing
+      position relative
+      z-index 5
+      height (bodyHeight/2.25)
+      width (bodyWidth/1.25)
+      border (bodyBorder) solid brown
+  
+  #flying2
+    left -.1em
+    .wing
+      transform rotateZ(25deg)
+      transform rotateX(0deg)
+      margin-left -1em
+      border-top-left-radius 1em
+      border-top-right-radius .75em
+      border-bottom-left-radius .25em
+      border-bottom-right-radius .5em
+  
+  #flying1
+    right -.1em
+    .wing
+      transform rotateZ(25deg)
+      transform rotateX(0deg)
+      margin-right -1em
+      border-top-left-radius .75em
+      border-top-right-radius 1em
+      border-bottom-left-radius .5em
+      border-bottom-right-radius .25em
 
-#branch
-  display none
-  position absolute
-  top 4.6em
-  width 100%
-  height .15em
-  background-color light-brown
+#flying1, #flying2
+  #feathers
+    position absolute
+    #feather1
+      .feather
+        border-color light-brown
+    #feather2
+      .feather
+        border-color light-brown
+  
+#flying1
+  #feathers
+    position absolute
+    top .1em
+    left .15em
+    .feather
+      -webkit-transform rotate(-115deg)
+      -moz-transform rotate(-115deg)
+      -o-transform rotate(-115deg)
+      transform rotate(-115deg)
+
+#flying2
+  #feathers
+    position absolute
+    top .1em
+    right .15em
+    .feather
+      -webkit-transform rotate(25deg)
+      -moz-transform rotate(25deg)
+      -o-transform rotate(25deg)
+      transform rotate(25deg)
+  
+.animateFlightLeft
+  -webkit-transform rotateX(0deg) rotateY(0deg)
+  -moz-transform rotateX(0deg) rotateY(0deg)
+  -o-transform rotateX(0deg) rotateY(0deg)
+  transform rotateX(0deg) rotateY(0deg)
+  -webkit-animation 10s flightLeft linear forwards
+  -moz-animation 10s flightLeft linear forwards
+  -o-animation 10s flightLeft linear forwards
+  animation 10s flightLeft linear forwards
+ 
+.animateFlightRight
+  -webkit-transform rotateX(0deg) rotateY(0deg)
+  -moz-transform rotateX(0deg) rotateY(0deg)
+  -o-transform rotateX(0deg) rotateY(0deg)
+  transform rotateX(0deg) rotateY(0deg)
+  -webkit-animation 10s flightRight linear forwards
+  -moz-animation 10s flightRight linear forwards
+  -o-animation 10s flightRight linear forwards
+  animation 10s flightRight linear forwards
 
 
-main
-  display none
+/*
+  Owl Flying frames
+*/
+@keyframes flightLeft {
+  0% {
+    top .65em
+    right -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+  }
+  5% {
+    top .65em
+    right -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+  }
+  10% {
+    top .65em
+    right -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+  }
+  15% {
+    top .65em
+    right -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+  }
+  20% {
+    top .65em
+    right -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+  }
+  25% {
+    top .65em
+    right -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+  }
+  30%{
+    top .65em
+    right -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+  }
+  35% {
+    top .65em
+    right -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+  }
+  40% {
+    top .65em
+    right -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+  }
+  45% {
+    top .65em
+    right -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+  }
+  50% {
+    top .65em
+    right -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+  }
+  55% {
+    top .65em
+    right -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(35deg)
+  }
+  60% {
+    top .65em
+    right -.15em
+    -webkit-transform rotateX(100deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(100deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(100deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(100deg) rotateY(0deg) rotateZ(0deg)
+  }
+  65% {
+    top .65em
+    right -.15em
+    -webkit-transform rotateX(0deg) rotateY(0deg) rotate(0deg)
+    -moz-transform rotateX(0deg) rotateY(0deg) rotate(0deg)
+    -o-transform rotateX(0deg) rotateY(0deg) rotate(0deg)
+    transform rotateX(0deg) rotateY(0deg) rotate(0deg)
+  }
+  70% {
+    top .65em
+    right -.1em
+    -webkit-transform rotateX(-20deg) rotateY(-70deg) rotateZ(0deg)
+    -moz-transform rotateX(-20deg) rotateY(-70deg) rotateZ(0deg)
+    -o-transform rotateX(-20deg) rotateY(-70deg) rotateZ(0deg)
+    transform rotateX(-20deg) rotateY(-70deg) rotateZ(0deg)
+  }
+  75% {
+    top .65em
+    right -.1em
+    -webkit-transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+  }
+  80% {
+    top .65em
+    right -.1em
+    -webkit-transform rotateX(-20deg) rotateY(-70deg) rotateZ(0deg)
+    -moz-transform rotateX(-20deg) rotateY(-70deg) rotateZ(0deg)
+    -o-transform rotateX(-20deg) rotateY(-70deg) rotateZ(0deg)
+    transform rotateX(-20deg) rotateY(-70deg) rotateZ(0deg)
+  }
+  85% {
+    /* Wing rotates in */
+    top .65em
+    right -.1em
+    -webkit-transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+  }
+  90% {
+    /* Have folded wings appear(opacity 1) from 8-9s*/
+    top .65em
+    right  0em
+    opacity 1
+    -webkit-transform rotateX(-20deg) rotateY(-75deg) rotateZ(0deg)
+    -moz-transform rotateX(-20deg) rotateY(-75deg) rotateZ(0deg)
+    -o-transform rotateX(-20deg) rotateY(-75deg) rotateZ(0deg)
+    transform rotateX(-20deg) rotateY(-75deg) rotateZ(0deg)
+  }
+  100% {
+    /* Wings dissappear(opacity 0) */
+    top .65em
+    right .1em
+    opacity 0
+    -webkit-transform rotateX(-20deg) rotateY(-120deg) rotateZ(0deg)
+    -moz-transform rotateX(-20deg) rotateY(-120deg) rotateZ(0deg)
+    -o-transform rotateX(-20deg) rotateY(-120deg) rotateZ(0deg)
+    transform rotateX(-20deg) rotateY(-120deg) rotateZ(0deg)
+  }
+}
 
-//
-// navicon key frames
-//
+@keyframes flightRight {
+  0% {
+    top .65em
+    left -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+  }
+  5% {
+    top .65em
+    left -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+  }
+  10% {
+    top .65em
+    left -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+  }
+  15% {
+    top .65em
+    left -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+  }
+  20% {
+    top .65em
+    left -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+  }
+  25% {
+    top .65em
+    left -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+  }
+  30%{
+    top .65em
+    left -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+  }
+  35% {
+    top .65em
+    left -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+  }
+  40% {
+    top .65em
+    left -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+  }
+  45% {
+    top .65em
+    left -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+  }
+  50% {
+    top .65em
+    left -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(0deg)
+  }
+  55% {
+    top .65em
+    left -.2em
+    -webkit-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    -moz-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    -o-transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+    transform rotateX(180deg) rotateY(0deg) rotateZ(-35deg)
+  }
+  60% {
+    top .65em
+    left -.15em
+    -webkit-transform rotateX(100deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(100deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(100deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(100deg) rotateY(0deg) rotateZ(0deg)
+  }
+  65% {
+    top .65em
+    left -.15em
+    -webkit-transform rotateX(0deg) rotateY(0deg) rotate(0deg)
+    -moz-transform rotateX(0deg) rotateY(0deg) rotate(0deg)
+    -o-transform rotateX(0deg) rotateY(0deg) rotate(0deg)
+    transform rotateX(0deg) rotateY(0deg) rotate(0deg)
+  }
+  70% {
+    top .65em
+    left -.1em
+    -webkit-transform rotateX(20deg) rotateY(-70deg) rotateZ(0deg)
+    -moz-transform rotateX(20deg) rotateY(-70deg) rotateZ(0deg)
+    -o-transform rotateX(20deg) rotateY(-70deg) rotateZ(0deg)
+    transform rotateX(20deg) rotateY(-70deg) rotateZ(0deg)
+  }
+  75% {
+    top .65em
+    left -.1em
+    -webkit-transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+  }
+  80% {
+    top .65em
+    left -.1em
+    -webkit-transform rotateX(20deg) rotateY(-70deg) rotateZ(0deg)
+    -moz-transform rotateX(20deg) rotateY(-70deg) rotateZ(0deg)
+    -o-transform rotateX(20deg) rotateY(-70deg) rotateZ(0deg)
+    transform rotateX(20deg) rotateY(-70deg) rotateZ(0deg)
+  }
+  85% {
+    /* Wing rotates in */
+    top .65em
+    left -.1em
+    -webkit-transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    -moz-transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    -o-transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    transform rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+  }
+  90% {
+    /* Have folded wings appear(opacity 1) from 8-9s*/
+    top .65em
+    left  0em
+    opacity 1
+    -webkit-transform rotateX(20deg) rotateY(-75deg) rotateZ(0deg)
+    -moz-transform rotateX(20deg) rotateY(-75deg) rotateZ(0deg)
+    -o-transform rotateX(20deg) rotateY(-75deg) rotateZ(0deg)
+    transform rotateX(20deg) rotateY(-75deg) rotateZ(0deg)
+  }
+  100% {
+    /* Wings dissappear(opacity 0) */
+    top .65em
+    left .1em
+    opacity 0
+    -webkit-transform rotateX(20deg) rotateY(-120deg) rotateZ(0deg)
+    -moz-transform rotateX(20deg) rotateY(-120deg) rotateZ(0deg)
+    -o-transform rotateX(20deg) rotateY(-120deg) rotateZ(0deg)
+    transform rotateX(20deg) rotateY(-120deg) rotateZ(0deg)
+  }
+}
+
+@keyframes foldedAppearence {
+  0% {
+    opacity 0
+  }
+  80% {
+    opacity 0
+  }
+  90% {
+    opacity 0
+  }
+  100% {
+    opacity 1
+  }
+}
+
+@keyframes owlMotion {
+  0% {
+    top -9em
+    opacity 0
+    -webkit-transform scale(.8)
+    -moz-transform scale(.8)
+    -o-transform scale(.8)
+    transform scale(.8)
+  }
+  10% {
+    top -9em
+    opacity 1
+    -webkit-transform scale(.8)
+    -moz-transform scale(.8)
+    -o-transform scale(.8)
+    transform scale(.8)
+  }
+  60% {
+    top 5
+  }
+  70% {
+    top 4em
+    -webkit-transform scale(.8)
+    -moz-transform scale(.8)
+    -o-transform scale(.8)
+    transform scale(.8)
+  }
+  80% {
+    top 2.5em
+    -webkit-transform scale(1)
+    -moz-transform scale(1)
+    -o-transform scale(1)
+    transform scale(1)
+  }
+  90% {
+    top 3em
+    -webkit-transform scale(1)
+    -moz-transform scale(1)
+    -o-transform scale(1)
+    transform scale(1)
+  }
+  100% {
+    top 3em
+    opacity 1
+    -webkit-transform scale(1)
+    -moz-transform scale(1)
+    -o-transform scale(1)
+    transform scale(1)
+  }
+}
+
+@keyframes legMotion {
+  0% {
+    z-index 2
+  }
+  80% {
+    z-index 2
+  }
+  100% {
+    z-index 289
+  }
+}
+
+
+/*
+  navicon key frames
+*/
 @keyframes squishBottom {
   0% {
     margin-top 32px
@@ -582,33 +1151,23 @@ main
   }
 }
 
-//
-// loaded keyframes
-//
 
+/*
+ load keyframes
+*/
 @keyframes appear {
   0% {
     opacity 0
   }
-  80% {
-    opacity 0
+  20% {
+    opacity 1
   }
   100% {
     opacity 1
+    z-index 3
   }
 }
 
-@keyframes owlFlight {
-  0% {
-    top -9em
-  }
-  10% {
-    top -3em
-  }
-  100% {
-    top 3em
-  }
-}
 
 /*
 #media
