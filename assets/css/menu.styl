@@ -107,28 +107,34 @@ main
 /*
   navigation icon
 */
-#navicon
-  display inline-block
-  margin-bottom -23px
-  width 30px
-  height 30px
-
-  .bar
+#navnook
+    display inline-block
+    margin-bottom -23px
     width 35px
-    height 3px
-    background-color white
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
+    height 30px
+    padding-top 10px
+  #navicon
+    display inline-block
+    margin-bottom -23px
+    width 30px
+    height 30px
 
-  .bar:nth-of-type(2)
-    margin-top -20px
+    .bar
+      width 35px
+      height 3px
+      background-color white
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
 
-  .bar:nth-of-type(3)
-    margin-top 32px
+    .bar:nth-of-type(2)
+      margin-top -20px
 
-#navicon.active
+    .bar:nth-of-type(3)
+      margin-top 32px
+
+#navnook.active
   .bar:nth-of-type(1)
     -webkit-animation: dissappear .5s linear;
     -moz-animation:    dissappear .5s linear;
@@ -159,7 +165,7 @@ main
     -o-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
-#navicon.inactive
+#navnook.inactive
   .bar:nth-of-type(1)
     -webkit-animation: dissappearRev .5s linear;
     -moz-animation:    dissappearRev .5s linear;
@@ -327,6 +333,7 @@ main
       width (bodyWidth/20)
       background-color #ffcc33
       border-radius 1em
+      z-index 2
       animation 10s linear legMotion forwards
     .leg
       height (bodyHeight/4)
@@ -448,6 +455,12 @@ main
           -moz-transform rotate(-5deg)
           -o-transform rotate(-5deg)
           transform rotate(-5deg)
+
+  .leg, .joint, .toe
+    position relative
+    animation 10s linear legMotion forwards
+
+
   
   /*
     Wings
@@ -455,7 +468,7 @@ main
   #wings
     .folded
       position relative
-      z-index 5
+      z-index 1
       height (bodyHeight/5)
       width (bodyWidth/20)
       border (bodyBorder) solid brown
@@ -498,7 +511,7 @@ main
     top .65em
     .wing
       position relative
-      z-index 5
+      z-index 1
       height (bodyHeight/2.25)
       width (bodyWidth/1.25)
       border (bodyBorder) solid brown
@@ -1164,7 +1177,6 @@ main
   }
   100% {
     opacity 1
-    z-index 3
   }
 }
 

@@ -27,13 +27,13 @@ notfoundView = ->
 
 
 
-$('#navicon').click( () ->
+$('#navnook').click( () ->
   $('#navbar ul').toggleClass('activeMenu')
   if activeMenu is true
-    $('#navicon').removeClass('inactive').addClass('active')
+    $('#navnook').removeClass('inactive').addClass('active')
     activeMenu = false
   else
-    $('#navicon').removeClass('active').addClass('inactive')
+    $('#navnook').removeClass('active').addClass('inactive')
     activeMenu = true
 )
 
