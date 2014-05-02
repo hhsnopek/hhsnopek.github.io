@@ -204,7 +204,7 @@ main
   font-size 3.5em
   text-align center
   color white
-  h1
+  #name
     top 1.28em
     position relative
     z-index 0
@@ -333,7 +333,7 @@ main
       width (bodyWidth/20)
       background-color #ffcc33
       border-radius 1em
-      z-index 2
+      z-index -1
       animation 10s linear legMotion forwards
     .leg
       height (bodyHeight/4)
@@ -456,11 +456,6 @@ main
           -o-transform rotate(-5deg)
           transform rotate(-5deg)
 
-  .leg, .joint, .toe
-    position relative
-    animation 10s linear legMotion forwards
-
-
   
   /*
     Wings
@@ -468,7 +463,7 @@ main
   #wings
     .folded
       position relative
-      z-index 1
+      z-index -1
       height (bodyHeight/5)
       width (bodyWidth/20)
       border (bodyBorder) solid brown
@@ -511,7 +506,7 @@ main
     top .65em
     .wing
       position relative
-      z-index 1
+      z-index -1
       height (bodyHeight/2.25)
       width (bodyWidth/1.25)
       border (bodyBorder) solid brown
@@ -998,13 +993,13 @@ main
 
 @keyframes legMotion {
   0% {
-    z-index 2
+    z-index -1
   }
   80% {
-    z-index 2
+    z-index -1
   }
   100% {
-    z-index 289
+    z-index 9999
   }
 }
 
