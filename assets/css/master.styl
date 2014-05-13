@@ -1,5 +1,8 @@
 normalize()
 
+@import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700')
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300')
+
 grey = #333
 blue = #A0E3FC
 green = #66cc33
@@ -16,13 +19,9 @@ legColor = brown
 footColor = brown
 featherColor = light-brown
 
-@import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700')
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300')
-
 bodyHeight = 1.25em
 bodyWidth = bodyHeight
 bodyBorder = (bodyHeight/10)
-
 
 *
   margin 0
@@ -34,47 +33,42 @@ html, body
 
 body
   font-family 'Noto Sans', sans-serif
-  color white
-  overflow-y hidden
-  background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #DBFCFC 20%, #A0E3FC 60%, #4C99B5 100%);
-  background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #DBFCFC 20%, #A0E3FC 60%, #4C99B5 100%);
-  background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #DBFCFC 20%, #A0E3FC 60%, #4C99B5 100%);
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(0.2, #DBFCFC), color-stop(0.6, #A0E3FC), color-stop(1, #4C99B5));
+  color grey
+  #index
+    overflow-y hidden
+    background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #DBFCFC 20%, #A0E3FC 60%, #4C99B5 100%);
+    background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #DBFCFC 20%, #A0E3FC 60%, #4C99B5 100%);
+    background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #DBFCFC 20%, #A0E3FC 60%, #4C99B5 100%);
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(0.2, #DBFCFC), color-stop(0.6, #A0E3FC), color-stop(1, #4C99B5));
 
-  // starry night
-  &:before
-    content ""
-    background-color transparent
-    position absolute
-    border-radius 3px
-    top 50%
-    left 50%
-    margin-top -2px
-    margin-left -2px
-    width 4px
-    height 4px
-    z-index 10
-    box-shadow 80px 140px white, -120px -60px white, 70px -40px white, 300px 90px white, 100px -80px white, -220px 60px white, 320px 120px white, -410px 90px white, -20px 220px white, 120px -220px white, 70px -445px white, 400px -360px white, -500px -250px white, -190px -220px white, 480px -150px white, -350px -400px white, 550px -420px white, -75px -370px white
+    // starry night
+    &:before
+      content ""
+      background-color transparent
+      position absolute
+      border-radius 3px
+      top 50%
+      left 50%
+      margin-top -2px
+      margin-left -2px
+      width 4px
+      height 4px
+      z-index 10
+      box-shadow 80px 140px white, -120px -60px white, 70px -40px white, 300px 90px white, 100px -80px white, -220px 60px white, 320px 120px white, -410px 90px white, -20px 220px white, 120px -220px white, 70px -445px white, 400px -360px white, -500px -250px white, -190px -220px white, 480px -150px white, -350px -400px white, 550px -420px white, -75px -370px white
 
-main
+
+
+#index, #About, #Blog, #Projects
   display none
+  color grey
 
+#Blog
+  .post
+    display none
 
-/*
-  document loaded animation
-*/
-.loaded
-  header, #name
-    opacity 0
-    -webkit-animation: appear 10s linear;
-    -moz-animation:    appear 10s linear;
-    -o-animation:      appear 10s linear;
-    animation:         appear 10s linear;
-    -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;
-    -o-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-
+#Projects
+  .project
+    display none
 
 /*
   navigation
@@ -122,7 +116,7 @@ main
     .bar
       width 35px
       height 3px
-      background-color white
+      background-color grey
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
       -o-transform: rotate(0deg);
@@ -210,7 +204,7 @@ main
     z-index 0
     font-family 'Open Sans', sans-serif
     font-weight 300
-  
+
 #owl
   position absolute
   left 50%
@@ -231,7 +225,7 @@ main
     -moz-transform rotate(45deg)
     -o-transform rotate(45deg)
     transform rotate(45deg)
-    
+
   /*
     Eyes
   */
@@ -246,7 +240,7 @@ main
     width (bodyWidth/10)
     background-color pupilColor
     border-radius 9999em
-    
+
   #eye1
     .eye
       position absolute
@@ -314,7 +308,7 @@ main
       position absolute
       top -(bodyHeight/2.35)
       left (bodyWidth/2.6)
-        
+
     #feather2
       .feather
         position absolute
@@ -456,7 +450,7 @@ main
           -o-transform rotate(-5deg)
           transform rotate(-5deg)
 
-  
+
   /*
     Wings
   */
@@ -467,7 +461,7 @@ main
       height (bodyHeight/5)
       width (bodyWidth/20)
       border (bodyBorder) solid brown
-      background-color brown 
+      background-color brown
       -webkit-animation 10s linear foldedAppearence forwards
       -moz-animation 10s linear foldedAppearence forwards
       -o-animation 10s linear foldedAppearence fowards
@@ -500,7 +494,7 @@ main
         border-radius 100% / 50%
         border-top-right-radius 0
         border-bottom-right-radius 0
-  
+
   #flying1, #flying2
     position absolute
     top .65em
@@ -510,7 +504,7 @@ main
       height (bodyHeight/2.25)
       width (bodyWidth/1.25)
       border (bodyBorder) solid brown
-  
+
   #flying2
     left -.1em
     .wing
@@ -521,7 +515,7 @@ main
       border-top-right-radius .75em
       border-bottom-left-radius .25em
       border-bottom-right-radius .5em
-  
+
   #flying1
     right -.1em
     .wing
@@ -542,7 +536,7 @@ main
     #feather2
       .feather
         border-color light-brown
-  
+
 #flying1
   #feathers
     position absolute
@@ -564,7 +558,7 @@ main
       -moz-transform rotate(25deg)
       -o-transform rotate(25deg)
       transform rotate(25deg)
-  
+
 .animateFlightLeft
   -webkit-transform rotateX(0deg) rotateY(0deg)
   -moz-transform rotateX(0deg) rotateY(0deg)
@@ -574,7 +568,7 @@ main
   -moz-animation 10s flightLeft linear forwards
   -o-animation 10s flightLeft linear forwards
   animation 10s flightLeft linear forwards
- 
+
 .animateFlightRight
   -webkit-transform rotateX(0deg) rotateY(0deg)
   -moz-transform rotateX(0deg) rotateY(0deg)
@@ -584,6 +578,18 @@ main
   -moz-animation 10s flightRight linear forwards
   -o-animation 10s flightRight linear forwards
   animation 10s flightRight linear forwards
+
+
+/*
+  document loaded animation
+*/
+.loaded
+  header, #name
+    opacity 0
+    -webkit-animation appear 10s linear forwards
+    -moz-animation    appear 10s linear forwards
+    -o-animation      appear 10s linear forwards
+    animation         appear 10s linear forwards
 
 
 /*
@@ -1034,7 +1040,7 @@ main
     -webkit-transform: rotate(-135deg);
     -moz-transform: rotate(-135deg);
     -o-transform: rotate(-135deg);
-    transform: rotate(-135deg);  
+    transform: rotate(-135deg);
   }
 }
 
@@ -1065,7 +1071,7 @@ main
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);  
+    transform: rotate(-45deg);
   }
 }
 
@@ -1090,7 +1096,7 @@ main
     -webkit-transform: rotate(-135deg);
     -moz-transform: rotate(-135deg);
     -o-transform: rotate(-135deg);
-    transform: rotate(-135deg);  
+    transform: rotate(-135deg);
   }
   50% {
     margin-top -3px
@@ -1121,7 +1127,7 @@ main
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);  
+    transform: rotate(-45deg);
   }
   50% {
     margin-top -3px
@@ -1150,7 +1156,7 @@ main
   0% {
     opacity 0
   }
-  
+
   50% {
     opacity 0
   }
@@ -1176,12 +1182,12 @@ main
 }
 
 
-/*
+
 #media
   li
     margin 5px
     display inline-block
-    
+
     svg
       display block
       width 32px
@@ -1197,62 +1203,17 @@ main
     #gh:hover svg > *
       fill #666
     #ln:hover g > *
-      fill #4875B4  
+      fill #4875B4
 
-.link, #blog a
-  reset-link()
-  color white
-  border-bottom green 1px solid
-  &:hover
-    color green
-    border-bottom white 1px solid
+  .link, #blog a
+    reset-link()
+    color white
+    border-bottom green 1px solid
+    &:hover
+      color green
+      border-bottom white 1px solid
 
-
-header
-  text-align center
-  color white
-  bg('/img/background.jpeg', center center no-repeat)
-  background-size cover
-  width 100%
-  height 90%
-  overflow hidden
-
-  #inner-container
-    position relative
-    background-color rgba(0,0,0, .35)
-    height 100%
-    width 100%
-    border-bottom 3px solid black
-    font-weight 700
-
-    h1
-      padding-top 120px
-      font-size 45px
-      margin 0
-    h3
-      font-size 23px
-
-    #navbar
-      margin-right 50px
-      text-align right
-      color white
-      li
-        padding-top 48px
-        font-size 16px
-        display inline-block
-        &:last-child
-          margin-left 20px
-    #name
-      position absolute
-      left 50px
-      padding-top 40px
-      a
-        reset-link()
-        color white
-        font-size 32px
-
-
-#projects
+#Projects
   width 60%
   margin 100px 20% 0 20%
   padding-bottom 100px
@@ -1266,7 +1227,7 @@ header
     margin 2em
     &:last-child
       margin-top 10px
-  
+
   .img
     width 48px
     margin-bottom -1em
@@ -1288,49 +1249,3 @@ header
     &:hover
       color green
       border-bottom 1px solid black
-
-
-@media screen and (max-width: 750px)
-  #projects
-    margin-left 10%
-    width 80%
-
-@media screen and (max-width: 700px)
-  *
-    overflow-x hidden
-  #inner-container
-    #navbar
-      padding-top 40px
-    h1
-      padding-top 90px !important
-
-  #projects
-    width 100%
-    margin-left 0
-    .link
-      font-size 16px
-
-@media screen and (max-width: 555px)
-  #inner-container
-    #name
-      position relative !important
-      left 0 !important
-      padding-top 10px
-      padding-bottom
-    #navbar
-      text-align center !important
-      margin-right 0 !important
-      padding-top 0
-      margin-top -10px
-
-    h1
-      padding-top 20px !important
-
-    #media
-      position relative !important
-      right 0 !important
-      padding-top 30px
-
-  #projects
-    margin-top 0
-*/

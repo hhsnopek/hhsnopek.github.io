@@ -1,116 +1,149 @@
+extends layout
 
-header
-  #navbar
-    ul
-      li: a(href='/about').link about
-      li: a(href='//blog.hhsnopek.me').link blog
-      li: a(href='/projects').link projects
-    #navnook
-      #navicon
-        .bar
-        .bar
-        .bar
+block content
 
+  mixin blogItem(name, date, summary)
+    ul.item
+      li: h2.title: a(href="#Blog/"+name)= name
+      li: h4.date:= date
+      li: p.summary:= summary
 
-#owlContainer
-  #owl
-    #body
-    #eye1
-      .eye
-      .pupil
-    #eye2
-      .eye
-      .pupil
-    #beak
-      .beak
-    #feathers
-      #row2
-        #feather1
-          .feather
-        #feather2
-          .feather
-      #row1
-        .feather
+  mixin post(name, date, content)
+    div(id=name).post
+      h2= name
+      h4= date
+      != content
 
-    #legs
-      #left
-        .leg
-        #lefttoe
-          .joint
-          .toe
-        #middletoe
-          .joint
-          .toe
-        #righttoe
-          .joint
-          .toe
-      #right
-        .leg
-        #lefttoe
-          .joint
-          .toe
-        #middletoe
-          .joint
-          .toe
-        #righttoe
-          .joint
-          .toe
+  header
+    #navbar
+      ul
+        li: a(href='#About').link about
+        li: a(href='#Blog').link blog
+        li: a(href='#Projects').link projects
+      #navnook
+        #navicon
+          .bar
+          .bar
+          .bar
 
-    #wings
-      #wing1
-        .folded
-      #flying1.animateFlightLeft
-        .wing
+  main
+    #index
+      #owlContainer
+        #owl
+          #body
+          #eye1
+            .eye
+            .pupil
+          #eye2
+            .eye
+            .pupil
+          #beak
+            .beak
           #feathers
-            #feather1
-              .feather
-            #feather2
-              .feather
-      #wing2
-        .folded
-      #flying2.animateFlightRight
-        .wing
-          #feathers
-            #feather1
-              .feather
-            #feather2
+            #row2
+              #feather1
+                .feather
+              #feather2
+                .feather
+            #row1
               .feather
 
-  h1#name Henry Snopek
+          #legs
+            #left
+              .leg
+              #lefttoe
+                .joint
+                .toe
+              #middletoe
+                .joint
+                .toe
+              #righttoe
+                .joint
+                .toe
+            #right
+              .leg
+              #lefttoe
+                .joint
+                .toe
+              #middletoe
+                .joint
+                .toe
+              #righttoe
+                .joint
+                .toe
 
-main
-  ul#media
-    li: a(href='//plus.google.com/108972071032975834000?prsrc=3')#g
-      include ../assets/img/icon-g+.svg
-    li: a(href='//facebook.com/henrysnopek')#fb
-      include ../assets/img/icon-fb.svg
-    li: a(href='//twitter.com/HHSnopek')#t
-      include ../assets/img/icon-twitter.svg
-    li: a(href='//github.com/HHSnopek')#gh
-      include ../assets/img/icon-gh.svg
-    li: a(href='//linkedin.com/in/hhsnopek/')#ln
-      include ../assets/img/icon-ln.svg
+          #wings
+            #wing1
+              .folded
+            #flying1.animateFlightLeft
+              .wing
+                #feathers
+                  #feather1
+                    .feather
+                  #feather2
+                    .feather
+            #wing2
+              .folded
+            #flying2.animateFlightRight
+              .wing
+                #feathers
+                  #feather1
+                    .feather
+                  #feather2
+                    .feather
 
-  ul#projects
-    li: h1 Projects
-    li
-      a(href='http://roots.cx/')
-        img(src='/img/roots.svg').img
-      a(href='http://roots.cx/').link roots
-      p.description A toolbox for building simple, beautiful, and efficient products for the web.
-    li
-      a(href='https://github.com/dc414/SNMP_Scanner')
-        img(src='/img/wifi.svg')#wifi.img
-      a(href='https://github.com/dc414/SNMP_Scanner').link SNMP Scanner
-      p.description Scan some ip addresses... maybe you'll find something.
-    li
-      a(href='http://java-exploit.com')
-        img(src='/img/coffee.svg').img
-      a(href='http://java-exploit.com').link Java-Exploit
-      p.description Too many exploits are occuring with Java; sit back with some coffee and never miss one again.
-    li
-      a(href='http://slideshowforglass.com')
-        img(src='/img/Google-Glass-Logo.jpg').img
-      a(href='http://slideshowforglass.com').link Slideshow for Glass
-      p.description View notes on your Glass, change a couple slides, always get an applause.
+        h1#name Henry Snopek
 
+    #About
+      h1 About Me!
+
+    #Blog
+      h1 Blog with some posts!
+      ul#list
+        each post in site.posts
+          +blogItem(post.title, post.date, post.summary)
+      each post in site.posts
+        +post(post.title, post.date, post.content)
+
+      ul#media
+        li: a(href='//plus.google.com/108972071032975834000?prsrc=3')#g
+          include ../assets/img/icon-g+.svg
+        li: a(href='//facebook.com/henrysnopek')#fb
+          include ../assets/img/icon-fb.svg
+        li: a(href='//twitter.com/HHSnopek')#t
+          include ../assets/img/icon-twitter.svg
+        li: a(href='//github.com/HHSnopek')#gh
+          include ../assets/img/icon-gh.svg
+        li: a(href='//linkedin.com/in/hhsnopek/')#ln
+          include ../assets/img/icon-ln.svg
+
+    #Projects
+      h1 Projects I'm involved in!
+      ul
+        li
+          a(href='https://github.com/inorganik/countUp.js')
+            img(src='/img/icon-gh.svg').img
+          a(href='https://github.com/inorganik/countUp.js').link countUp.js
+          p.description A dependency-free, lightweight JavaScript "class" that can be used to quickly create animations that display numerical data in a more interesting way.
+        li
+          a(href='https://github.com/hhsnopek/hn-special-dark')
+            img(src='/img/hn.png').img
+          a(href='https://github.com/hhsnopek/hn-special-dark').link HN Special Dark
+          p.description A dark theme of  
+            a(href='https://github.com/gabrielecirulli/hn-special') gabrielecirulli/hn-special
+            | 's extension.
+        li
+          a(href='http://roots.cx/')
+            img(src='/img/roots.svg').img
+          a(href='http://roots.cx/').link roots
+          p.description A toolbox for building simple, beautiful, and efficient products for the web.
+        li
+          a(href='https://github.com/dc414/SNMP_Scanner')
+            img(src='/img/wifi.svg')#wifi.img
+          a(href='https://github.com/dc414/SNMP_Scanner').link SNMP Scanner
+          p.description Scan some ip addresses... maybe you'll find something.
+        li
+          a(href='http://java-exploit.com')
+            img(src='/img/coffee.svg').img
+          a(href='http://java-exploit.com').link Java-Exploit
+          p.description Too many exploits are occuring with Java; sit back with some coffee and never miss one again.
