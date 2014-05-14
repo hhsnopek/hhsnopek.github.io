@@ -5,13 +5,13 @@
 axis            = require('axis-css')
 autoprefixer    = require('autoprefixer-stylus')
 DynamicContent  = require('dynamic-content')
-jeet            = require('jeet')
+Jeet            = require('jeet')
 rupture         = require('rupture')
 
-module.export =
+module.exports =
   ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore']
 
   extensions: [new DynamicContent]
 
   stylus:
-    user: [axis(), autoprefixer(), jeet(), rupture()]
+    use: [axis(), autoprefixer(), Jeet(), rupture()]
