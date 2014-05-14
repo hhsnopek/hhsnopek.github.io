@@ -15,18 +15,6 @@ require [
   'jquery',
   'Backbone',
 ], ($, Backbone) ->
-  $('body').addClass('loaded')
-  activeMenu = false
-
-  $('#navnook').click( () ->
-    $('#navbar ul').toggleClass('activeMenu')
-    if activeMenu is false
-      $('#navnook').removeClass('inactive').addClass('active')
-      activeMenu = true
-    else
-      $('#navnook').removeClass('active').addClass('inactive')
-      activeMenu = false
-  )
 
   ###*
    * display page and subpage
@@ -38,7 +26,10 @@ require [
     pagenation.set("currentsubpage", subpage)
     console.log "Displaying #{page} | #{subpage}\n"
 
-    docTitle(page)
+    if page is 'index'
+      return
+    else
+      docTitle(page)
     console.log "Changing title to: #{page}"
     $("##{page}").css('display', 'block')
 
