@@ -38,13 +38,19 @@ require [
     pagenation.set("currentsubpage", subpage)
     console.log "Displaying #{page} | #{subpage}\n"
 
-    if subpage is 'none' or 'list'
-      docTitle(page)
-      $("##{page}").css('display', 'block')
+    docTitle(page)
+    console.log "Changing title to: #{page}"
+    $("##{page}").css('display', 'block')
+
+    if subpage is 'list'
+      console.log "Changing title to: #{subpage}"
+      $("#blog #list").css('display', 'block')
+    return if subpage is undefined or subpage is null
     else
+      console.log "Changing title to: #{subpage}"
       docTitle(subpage)
-      console.log "displaying ##{subpage}"
       $("##{subpage}").css('display', 'block')
+
 
   ###*
    * hide page and subpage
@@ -54,12 +60,13 @@ require [
     subpage = pagenation.get("currentsubpage")
     console.log "Previous page: #{page} | #{subpage}"
 
-    if typeof page is 'undefined' and typeof subpage is 'undefined'
+    if typeof page is 'undefined' && typeof subpage is 'undefined'
       console.log "Hiding nothing"
     else
       $("##{page}").css('display', 'none')
-      $("##{subpage}").css('display', 'none') unless subpage is null
-      console.log "Hiding #{page} | #{subpage}"
+      $("##{subpage}").css('display', 'none')
+      console.log "Hiding: #{page} | #{subpage}"
+
 
   ###*
    * docTitle updates document.title
@@ -69,11 +76,12 @@ require [
     title = title.replace(/\-/g, ' ')
     document.title = "Henry Snopek | #{title}"
 
+
   class pageModel extends Backbone.Model
     currentpage: ""
     currentsubpage: ""
 
-  class ppModel extends Backbone.Model
+  class postModel extends Backbone.Model
     id: ""
 
   class indexView extends Backbone.View
@@ -104,7 +112,7 @@ require [
 
     render: ->
       hide()
-      display(@el, ppInfo.get("id"))
+      display(@el, blogPost.get("id"))
 
   class projectsView extends Backbone.View
     el: 'Projects'
@@ -131,14 +139,13 @@ require [
       new aboutView()
 
     blog: (post) ->
-      post = 'list' if post is null
-      ppInfo.set("id", post)
+      blogPost.set("id", post)
       new blogView()
 
     projects: () ->
       new projectsView()
 
   pagenation = new pageModel()
-  ppInfo = new ppModel()
+  blogPost = new postModel()
   new router()
   Backbone.history.start()
