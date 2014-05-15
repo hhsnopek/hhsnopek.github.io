@@ -1,45 +1,78 @@
-header
-  #inner-container
-    #name: a(href='/').link Henry Snopek
-    ul#navbar
-      li: a(href='//hhsnopek.svbtle.com/').link blog
-      li: a(href='#projects').link projects
+extends layout
 
-    h1 Front-End & Back-End
-    h3 Developer, Designer, Engineer
+block content
 
-    ul#media
-      li: a(href='//plus.google.com/108972071032975834000?prsrc=3')#g
-        include ../assets/img/icon-g+.svg
-      li: a(href='//facebook.com/henrysnopek')#fb
-        include ../assets/img/icon-fb.svg
-      li: a(href='//twitter.com/HHSnopek')#t
-        include ../assets/img/icon-twitter.svg
-      li: a(href='//github.com/HHSnopek')#gh
-        include ../assets/img/icon-gh.svg
-      li: a(href='//linkedin.com/in/hhsnopek/')#ln
-        include ../assets/img/icon-ln.svg
+  mixin blogItem(name, date, summary)
+    ul.item
+      li: h2.title: a(href="#Blog/"+name)= name
+      li: h4.date:= date
+      li: p.summary:= summary
 
-#container
-  ul#projects
-    li: h1 Projects
-    li
-      a(href='http://roots.cx/')
-        img(src='/img/roots.svg').img
-      a(href='http://roots.cx/').link roots
-      p.description A toolbox for building simple, beautiful, and efficient products for the web.
-    li
-      a(href='https://github.com/dc414/SNMP_Scanner')
-        img(src='/img/wifi.svg')#wifi.img
-      a(href='https://github.com/dc414/SNMP_Scanner').link SNMP Scanner
-      p.description Scan some ip addresses... maybe you'll find something.
-    li
-      a(href='http://java-exploit.com')
-        img(src='/img/coffee.svg').img
-      a(href='http://java-exploit.com').link Java-Exploit
-      p.description Too many exploits are occuring with Java; sit back with some coffee and never miss one again.
-    li
-      a(href='http://slideshowforglass.com')
-        img(src='/img/Google-Glass-Logo.jpg').img
-      a(href='http://slideshowforglass.com').link Slideshow for Glass
-      p.description View notes on your Glass, change a couple slides, always get an applause.
+  mixin post(name, date, content)
+    div(id=name).post
+      h2= name
+      h4= date
+      != content
+
+  .sidebar
+    #short
+      img(src='').circle
+      h2 Henry Snopek
+      p Web Developer, Programmer, & University Student
+      ul#media
+        li: a(href='//plus.google.com/108972071032975834000?prsrc=3')#g
+          include ../assets/img/icon-g+.svg
+        li: a(href='//facebook.com/henrysnopek')#fb
+          include ../assets/img/icon-fb.svg
+        li: a(href='//twitter.com/HHSnopek')#t
+          include ../assets/img/icon-twitter.svg
+        li: a(href='//github.com/HHSnopek')#gh
+          include ../assets/img/icon-gh.svg
+        li: a(href='//linkedin.com/in/hhsnopek/')#ln
+          include ../assets/img/icon-ln.svg
+
+  .main
+    #container
+      #index
+        #latest
+          h3 Latest blog post
+
+      #Blog
+        h1 Blog with some posts!
+        ul#list
+          each post in site.posts
+            +blogItem(post.title, post.date, post.summary)
+        each post in site.posts
+          +post(post.title, post.date, post.content)
+
+
+      #Projects
+        h1 Projects I'm involved in!
+        ul
+          li
+            a(href='https://github.com/inorganik/countUp.js')
+              img(src='/img/icon-gh.svg').img
+            a(href='https://github.com/inorganik/countUp.js').link countUp.js
+            p.description A dependency-free, lightweight JavaScript "class" that can be used to quickly create animations that display numerical data in a more interesting way.
+          li
+            a(href='https://github.com/hhsnopek/hn-special-dark')
+              img(src='/img/hn.png').img
+            a(href='https://github.com/hhsnopek/hn-special-dark').link HN Special Dark
+            p.description A dark theme of
+              a(href='https://github.com/gabrielecirulli/hn-special') gabrielecirulli/hn-special
+              | 's extension.
+          li
+            a(href='http://roots.cx/')
+              img(src='/img/roots.svg').img
+            a(href='http://roots.cx/').link roots
+            p.description A toolbox for building simple, beautiful, and efficient products for the web.
+          li
+            a(href='https://github.com/dc414/SNMP_Scanner')
+              img(src='/img/wifi.svg')#wifi.img
+            a(href='https://github.com/dc414/SNMP_Scanner').link SNMP Scanner
+            p.description Scan some ip addresses... maybe you'll find something.
+          li
+            a(href='http://java-exploit.com')
+              img(src='/img/coffee.svg').img
+            a(href='http://java-exploit.com').link Java-Exploit
+            p.description Too many exploits are occuring with Java; sit back with some coffee and never miss one again.

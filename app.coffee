@@ -1,11 +1,17 @@
-# ----------------------------------------
-# Project Configuration
-# ----------------------------------------
+###*
+ * roots v3.0.0-rc.6
+###
 
-ignore_files: ['_*', 'readme*', '.git', '.gitignore', '.DS_Store']
-ignore_folders: ['.git']
+axis            = require('axis-css')
+autoprefixer    = require('autoprefixer-stylus')
+DynamicContent  = require('dynamic-content')
+jeet            = require('jeet')
+rupture         = require('rupture')
 
-exports.layouts =
-  default: 'layout.jade'
+module.exports =
+  ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore']
 
-# exports.debug = false
+  extensions: [new DynamicContent]
+
+  stylus:
+    use: [axis(), rupture(), jeet(), autoprefixer()]

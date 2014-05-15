@@ -1,0 +1,16 @@
+{
+  "name": "hhsnopek",
+  "description": "My website, portfolio & Blog | hhsnopek.me",
+  "dependencies": {
+    "autoprefixer-stylus": "0.0.4",
+    "axis-css": "*",
+    "coffee-script": "1.7.x",
+    "dynamic-content": "0.0.3",
+    "jade": "1.x",
+    "jeet": "*",
+    "marked": "0.3.x",
+    "roots": "^3.0.0-rc.6",
+    "rupture": "*",
+    "stylus": "0.43.x"
+  }
+}
