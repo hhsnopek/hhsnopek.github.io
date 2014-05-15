@@ -1,75 +1,80 @@
+
+@import _settings
+
 normalize()
 
-@import url('http://fonts.googleapis.com/css?family=Noto+Sans:400,700')
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300')
-
-grey = #333
-blue = #A0E3FC
-green = #66cc33
-black = #000
-white = #fff
-yellow = #ffd500
-brown = #97694F
-light-brown = #C28F72
-dark-brown = #654635
-bodyColor = brown
-eyeColor = brown
-pupilColor = brown
-legColor = brown
-footColor = brown
-featherColor = light-brown
-
-bodyHeight = 1.25em
-bodyWidth = bodyHeight
-bodyBorder = (bodyHeight/10)
 
 *
   margin 0
   padding 0
+  box-sizing border-box
 
 html, body
   width 100%
   height 100%
 
 body
-  font-family 'Noto Sans', sans-serif
   color grey
-  #index
-    overflow-y hidden
-    background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #DBFCFC 20%, #A0E3FC 60%, #4C99B5 100%);
-    background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #DBFCFC 20%, #A0E3FC 60%, #4C99B5 100%);
-    background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #DBFCFC 20%, #A0E3FC 60%, #4C99B5 100%);
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(0.2, #DBFCFC), color-stop(0.6, #A0E3FC), color-stop(1, #4C99B5));
 
-    // starry night
-    &:before
-      content ""
-      background-color transparent
-      position absolute
-      border-radius 3px
-      top 50%
-      left 50%
-      margin-top -2px
-      margin-left -2px
-      width 4px
-      height 4px
-      z-index 10
-      box-shadow 80px 140px white, -120px -60px white, 70px -40px white, 300px 90px white, 100px -80px white, -220px 60px white, 320px 120px white, -410px 90px white, -20px 220px white, 120px -220px white, 70px -445px white, 400px -360px white, -500px -250px white, -190px -220px white, 480px -150px white, -350px -400px white, 550px -420px white, -75px -370px white
+  .sidebar
+    background-color #e74c3c //#2980b9
+    span(1/4)
+    height 100%
+
+    *
+      font-family 'Noto Sans' sans-serif
+      font-weight 400
+      color white
+
+    #short
+      text-align center
+
+    +tablet()
+      span(1/3)
+
+    +mobile()
+      height auto
+      stack()
+
+  .main
+    background-color #fff
+    height 100%
+    box-shadow inset 3px 0px 5px -2px #888
+    span(3/4)
+
+    *
+      font-family 'Aileron' sans-serif
+      font-weight 300
+
+    #container
+      width 90%
+      center()
+
+    +tablet
+      span(2/3)
+
+    +mobile
+      stack()
 
 
+.sidebar
+  display block
 
-#index, #About, #Blog, #Projects
-  display none
-  color grey
+#index
+  #latest
+    display block
 
 #Blog
+  display none
   .post
     display none
 
 #Projects
+  display none
   .project
     display none
 
+/*
 #media
   li
     margin 5px
@@ -136,296 +141,4 @@ body
     &:hover
       color green
       border-bottom 1px solid black
-
-
-/*
-  navigation
 */
-#navbar
-  position absolute
-  top 3em
-  right 10%
-  ul
-    display inline-block
-    opacity 0
-    -webkit-transition: all .5s ease-in;
-    -moz-transition:    all .5s ease-in;
-    -o-transition:      all .5s ease-in;
-    transition:         all .5s ease-in;
-  ul.activeMenu
-    opacity 1
-  li
-    font-size 1.25em
-    display inline-block
-    margin-left .5em
-    margin-right .5em
-    a
-      reset-link()
-  li:hover
-    a
-      border-bottom 3px solid white
-
-
-/*
-  navigation icon
-*/
-#navnook
-    display inline-block
-    margin-bottom -23px
-    width 35px
-    height 30px
-    padding-top 10px
-  #navicon
-    display inline-block
-    margin-bottom -23px
-    width 30px
-    height 30px
-
-    .bar
-      width 35px
-      height 3px
-      background-color grey
-      -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
-
-    .bar:nth-of-type(2)
-      margin-top -20px
-
-    .bar:nth-of-type(3)
-      margin-top 32px
-
-#navnook.active
-  .bar:nth-of-type(1)
-    -webkit-animation: dissappear .5s linear;
-    -moz-animation:    dissappear .5s linear;
-    -o-animation:      dissappear .5s linear;
-    animation:         dissappear .5s linear;
-    -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;
-    -o-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-
-  .bar:nth-of-type(2)
-    -webkit-animation: squishTop .5s linear;
-    -moz-animation:    squishTop .5s linear;
-    -o-animation:      squishTop .5s linear;
-    animation:         squishTop .5s linear;
-    -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;
-    -o-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-
-  .bar:nth-of-type(3)
-    -webkit-animation: squishBottom .5s linear;
-    -moz-animation:    squishBottom .5s linear;
-    -o-animation:      squishBottom .5s linear;
-    animation:         squishBottom .5s linear;
-    -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;
-    -o-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-
-#navnook.inactive
-  .bar:nth-of-type(1)
-    -webkit-animation: dissappearRev .5s linear;
-    -moz-animation:    dissappearRev .5s linear;
-    -o-animation:      dissappearRev .5s linear;
-    animation:         dissappearRev .5s linear;
-    -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;
-    -o-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-
-  .bar:nth-of-type(2)
-    -webkit-animation: squishTopRev .5s linear;
-    -moz-animation:    squishTopRev .5s linear;
-    -o-animation:      squishTopRev .5s linear;
-    animation:         squishTopRev .5s linear;
-    -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;
-    -o-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-
-  .bar:nth-of-type(3)
-    -webkit-animation: squishBottomRev .5s linear;
-    -moz-animation:    squishBottomRev .5s linear;
-    -o-animation:      squishBottomRev .5s linear;
-    animation:         squishBottomRev .5s linear;
-    -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;
-    -o-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-
-
-/*
-  navicon key frames
-*/
-@keyframes squishBottom {
-  0% {
-    margin-top 32px
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  50% {
-    margin-top -3px
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  75% {
-    margin-top -3px
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    margin-top -3px
-    -webkit-transform: rotate(-135deg);
-    -moz-transform: rotate(-135deg);
-    -o-transform: rotate(-135deg);
-    transform: rotate(-135deg);
-  }
-}
-
-@keyframes squishTop {
-  0% {
-    margin-top -20px
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  50% {
-    margin-top -3px
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  75% {
-    margin-top -3px
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    margin-top -3px
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-  }
-}
-
-@keyframes dissappear {
-  0% {
-    opacity 1
-  }
-  50% {
-    opacity 1
-  }
-  65% {
-    opacity 0
-  }
-  100% {
-    opacity 0
-  }
-}
-
-@keyframes squishBottomRev {
-  0% {
-    margin-top -3px
-    -webkit-transform: rotate(-135deg);
-    -moz-transform: rotate(-135deg);
-    -o-transform: rotate(-135deg);
-    transform: rotate(-135deg);
-  }
-  50% {
-    margin-top -3px
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  75% {
-    margin-top -3px
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    margin-top 32px
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes squishTopRev {
-  0% {
-    margin-top -3px
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-  }
-  50% {
-    margin-top -3px
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  75% {
-    margin-top -3px
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    margin-top -20px
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes dissappearRev {
-  0% {
-    opacity 0
-  }
-
-  50% {
-    opacity 0
-  }
-  100% {
-    opacity 1
-  }
-}
-
-
-/*
- load keyframes
-*/
-@keyframes appear {
-  0% {
-    opacity 0
-  }
-  20% {
-    opacity 1
-  }
-  100% {
-    opacity 1
-  }
-}

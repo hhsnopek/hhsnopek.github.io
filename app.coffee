@@ -5,7 +5,7 @@
 axis            = require('axis-css')
 autoprefixer    = require('autoprefixer-stylus')
 DynamicContent  = require('dynamic-content')
-Jeet            = require('jeet')
+jeet            = require('jeet')
 rupture         = require('rupture')
 
 module.exports =
@@ -14,4 +14,4 @@ module.exports =
   extensions: [new DynamicContent]
 
   stylus:
-    use: [axis(), autoprefixer(), Jeet(), rupture()]
+    use: [axis(), rupture(), jeet(), autoprefixer()]
