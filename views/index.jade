@@ -44,35 +44,3 @@ block content
             +blogItem(post.title, post.date, post.summary)
         each post in site.posts
           +post(post.title, post.date, post.content)
-
-
-      #Projects
-        h1 Projects I'm involved in!
-        ul
-          li
-            a(href='https://github.com/inorganik/countUp.js')
-              img(src='/img/icon-gh.svg').img
-            a(href='https://github.com/inorganik/countUp.js').link countUp.js
-            p.description A dependency-free, lightweight JavaScript "class" that can be used to quickly create animations that display numerical data in a more interesting way.
-          li
-            a(href='https://github.com/hhsnopek/hn-special-dark')
-              img(src='/img/hn.png').img
-            a(href='https://github.com/hhsnopek/hn-special-dark').link HN Special Dark
-            p.description A dark theme of
-              a(href='https://github.com/gabrielecirulli/hn-special') gabrielecirulli/hn-special
-              | 's extension.
-          li
-            a(href='http://roots.cx/')
-              img(src='/img/roots.svg').img
-            a(href='http://roots.cx/').link roots
-            p.description A toolbox for building simple, beautiful, and efficient products for the web.
-          li
-            a(href='https://github.com/dc414/SNMP_Scanner')
-              img(src='/img/wifi.svg')#wifi.img
-            a(href='https://github.com/dc414/SNMP_Scanner').link SNMP Scanner
-            p.description Scan some ip addresses... maybe you'll find something.
-          li
-            a(href='http://java-exploit.com')
-              img(src='/img/coffee.svg').img
-            a(href='http://java-exploit.com').link Java-Exploit
-            p.description Too many exploits are occuring with Java; sit back with some coffee and never miss one again.
