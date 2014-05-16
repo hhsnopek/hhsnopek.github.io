@@ -3,7 +3,7 @@
   "description": "My website, portfolio & Blog | hhsnopek.me",
   "dependencies": {
     "autoprefixer-stylus": "0.0.4",
-    "axis-css": "*",
+    "axis": "*",
     "coffee-script": "1.7.x",
     "dynamic-content": "0.0.3",
     "jade": "1.x",
