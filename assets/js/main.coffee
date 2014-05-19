@@ -17,46 +17,34 @@ require [
 ], ($, Backbone) ->
 
   ###*
-   * display page and subpage
+   * display page
    * @param  {String} page    div without hash
-   * @param  {String} subpage div without hash
   ###
-  display = (page, subpage) ->
+  display = (page) ->
     pagenation.set("currentpage", page)
-    pagenation.set("currentsubpage", subpage)
-    console.log "Displaying #{page} | #{subpage}\n"
+    console.log "Displaying #{page}\n"
 
-    if page is 'index'
-      return
-    else
+    if typeof page is 'undefined' or page is null
+      $("#list").css('display', 'block')
       docTitle(page)
-    console.log "Changing title to: #{page}"
-    $("##{page}").css('display', 'block')
-
-    if subpage is 'list'
-      console.log "Changing title to: #{subpage}"
-      $("#blog #list").css('display', 'block')
-    return if subpage is undefined or subpage is null
     else
-      console.log "Changing title to: #{subpage}"
-      docTitle(subpage)
-      $("##{subpage}").css('display', 'block')
+      $("#list").css('display', 'none')
+      docTitle(page)
+      $("##{page}").css('display', 'block')
 
 
   ###*
-   * hide page and subpage
+   * hide page
   ###
   hide = ->
     page = pagenation.get("currentpage")
-    subpage = pagenation.get("currentsubpage")
-    console.log "Previous page: #{page} | #{subpage}"
+    console.log "Previous page: #{page}"
 
-    if typeof page is 'undefined' && typeof subpage is 'undefined'
+    if typeof page is 'undefined' or page is null
       console.log "Hiding nothing"
     else
       $("##{page}").css('display', 'none')
-      $("##{subpage}").css('display', 'none')
-      console.log "Hiding: #{page} | #{subpage}"
+      console.log "Hiding: #{page}"
 
 
   ###*
@@ -64,79 +52,41 @@ require [
    * @param {String} title
   ###
   docTitle = (title) ->
-    title = title.replace(/\-/g, ' ')
-    document.title = "Henry Snopek | #{title}"
+    if typeof title is 'undefined' or title is null
+      document.title = "Henry Snopek"
+    else
+      title = $("##{title} .title").text()
+      document.title = "Henry Snopek | #{title}"
 
 
   class pageModel extends Backbone.Model
     currentpage: ""
-    currentsubpage: ""
 
   class postModel extends Backbone.Model
     id: ""
 
-  class indexView extends Backbone.View
-    el: 'index'
+
+  class postView extends Backbone.View
 
     constructor: ->
       @render()
 
     render: ->
       hide()
-      display(@el)
+      display(currentPost.get("id"))
 
-  class aboutView extends Backbone.View
-    el: 'About'
-
-    constructor: ->
-      @render()
-
-    render: ->
-      hide()
-      display(@el)
-
-  class blogView extends Backbone.View
-    el: 'Blog'
-
-    constructor: ->
-      @render()
-
-    render: ->
-      hide()
-      display(@el, blogPost.get("id"))
-
-  class projectsView extends Backbone.View
-    el: 'Projects'
-
-    constructor: ->
-      @render()
-
-    render: ->
-      hide()
-      display(@el)
 
   class router extends Backbone.Router
     routes:
-      "":                    "index"
-      "About":               "about"
-      "Blog":                "blog"
-      "Blog/:post":          "blog"
-      "Projects":            "projects"
+      "":       "index"
+      ":post":  "index"
 
-    index: ->
-      new indexView()
+    index: (post) ->
+      currentPost.set("id", post)
+      new postView()
 
-    about: ->
-      new aboutView()
-
-    blog: (post) ->
-      blogPost.set("id", post)
-      new blogView()
-
-    projects: () ->
-      new projectsView()
 
   pagenation = new pageModel()
-  blogPost = new postModel()
+  currentPost = new postModel()
   new router()
   Backbone.history.start()
