@@ -1,4 +1,4 @@
 /*.log
 /public/
 /node_modules/*
-/posts/*
+/posts/_*
