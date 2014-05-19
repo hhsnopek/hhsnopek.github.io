@@ -9,9 +9,9 @@ jeet            = require('jeet')
 rupture         = require('rupture')
 
 module.exports =
-  ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'node_modules']
+  ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore']
 
   extensions: [new DynamicContent]
 
   stylus:
-    use: [rupture(), jeet(), axis(), autoprefixer()]
+    use: [axis(), rupture(), jeet(), autoprefixer()]
