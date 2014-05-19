@@ -2,23 +2,26 @@ extends layout
 
 block content
 
-  mixin blogItem(name, date, summary)
+  mixin blogItem(name, link, date, summary)
     ul.item
-      li: h2.title: a(href="#Blog/"+name)= name
-      li: h4.date:= date
+      li: h2.title: a(href="/#"+link)= name
+      li: time.date:= date
       li: p.summary:= summary
 
-  mixin post(name, date, content)
-    div(id=name).post
-      h2= name
-      h4= date
+  mixin post(name, link, date, content)
+    div(id=link).post
+      h2.title= name
+      time.date= date
       != content
 
   .sidebar
-    #short
-      img(src='').circle
-      h2 Henry Snopek
-      p Web Developer, Programmer, & University Student
+    #profile
+      h1#name: a(href='/') Henry Snopek
+      img(src='/img/profile.png')#pic
+      #location
+        include ../assets/img/location.svg
+        h3 Waukesha, WI
+      p#short Web Developer, Programmer, & University Student
       ul#media
         li: a(href='//plus.google.com/108972071032975834000?prsrc=3')#g
           include ../assets/img/icon-g+.svg
@@ -33,14 +36,9 @@ block content
 
   .main
     #container
-      #index
-        #latest
-          h3 Latest blog post
-
       #Blog
-        h1 Blog with some posts!
         ul#list
           each post in site.posts
-            +blogItem(post.title, post.date, post.summary)
+            +blogItem(post.title, post.link, post.date, post.summary)
         each post in site.posts
-          +post(post.title, post.date, post.content)
+          +post(post.title, post.link, post.date, post.content)
