@@ -3,7 +3,7 @@
 *
   margin 0
   padding 0
-  box-sizing border-box
+  border-box()
 
 html, body
   width 100%
@@ -13,7 +13,7 @@ body
   color grey
 
   .sidebar
-    background-color #e74c3c //#2980b9
+    background-color blue
     height 100%
     span(1/4)
 
@@ -22,127 +22,133 @@ body
       font-weight 400
       color white
 
-    #short
+    #profile
+      margin 0 unit(font-size*.5, px) 0 unit(font-size*.5, px)
       text-align center
 
-    +desktop()
+    #name
+      a
+        font-weight 700
+      a:hover
+        color white
+
+    #pic
+      width 100px
+      height 100px
+      border-radius 100px
+
+    #location
+      *
+        display inline-block
+        vertical-align center
+
+      svg
+        width 32px
+        height 32px
+        margin-bottom -8px
+      svg g > *, svg > *
+        fill #fff
+
+    #short
+      display block
+
+    #media
+      li
+        margin 5px
+        inline-block()
+
+        svg
+          display block
+          width 32px
+          height 32px
+        svg g > *, svg > *
+          fill #fff
+          transition fill .25s ease-in-out
+
+      li:hover
+        svg
+          *
+            fill #34495e
+
+
+    +above(1050px)
       span(1/4)
 
-    +tablet()
+    +between(680px, 1050px)
       span(1/3)
 
-    +mobile()
+    +between(400px, 680px)
+      height auto
+      stack()
+
+    +below(400px)
       height auto
       stack()
 
   .main
     background-color #fff
     height 100%
-    box-shadow inset 3px 0px 5px -2px #888
-    span(3/4)
+    box-shadow inset 2px 0px 5px -2px #888
+    overflow-y scroll
 
     *
       font-family 'Aileron' sans-serif
       font-weight 300
 
     #container
-      width 90%
-      center()
+      padding-bottom 5%
+      center(90%)
 
-    +desktop()
+      #Blog
+        .item
+          reset-list()
+        .post
+          display none
+          li
+            margin-left 2.5em
+        .title
+          margin-bottom 0
+
+    +above(1050px)
       span(3/4)
+      #container
+        center(70%)
 
-    +tablet()
+    +between(680px, 1050px)
       span(2/3)
 
-    +mobile()
+    +between(400px, 680px)
       stack()
+      overflow-y visible
 
+    +below(400px)
+      stack()
+      overflow-y visible
 
-.sidebar
-  display block
-
-#index
-  #latest
-    display block
-
-#Blog
-  display none
-
-  .post
-    display none
-
-#Projects
-  display none
-  
-  .project
-    display none
-
-/*
-#media
-  li
-    margin 5px
-    display inline-block
-
-    svg
-      display block
-      width 32px
-      height 32px
-    svg g > *, svg > *
-      fill black
-    #g:hover g > *
-      fill #FF3333
-    #fb:hover svg > *
-      fill #3B5998
-    #t:hover svg > *
-      fill #33CCFF
-    #gh:hover svg > *
-      fill #666
-    #ln:hover g > *
-      fill #4875B4
-
-  .link, #blog a
-    reset-link()
-    color white
-    border-bottom green 1px solid
-    &:hover
-      color green
-      border-bottom white 1px solid
-
-#Projects
-  width 60%
-  margin 100px 20% 0 20%
-  padding-bottom 100px
-
-  h1
-    text-align center
-    margin-bottom 2em
-
-  li
-    list-style none
-    margin 2em
-    &:last-child
-      margin-top 10px
-
-  .img
-    width 48px
-    margin-bottom -1em
-    rounded()
-    &:nth-child(4)
-      border 3px solid lighten(grey, 70)
-  .link
-    font-size 24px
-    margin 1em 2em 1em 1em
-  .description
-    margin-top 2em
-    margin-left 5em
-    color black
-
-  .link
-    padding 3px
-    color black
-    border-bottom 1px solid green
-    &:hover
-      color green
-      border-bottom 1px solid black
-*/
+headers()
+text-selection()
+lists()
+.date
+  color lighten(grey, 30)
+a
+  text-decoration none
+  transition color .25s ease-in-out
+  color blue
+a:hover
+  color #34495e
+p
+  paragraph()
+blockquote
+  blockquo()
+code
+  padding 0 .25em 0 .25em
+  background-color #F5F5F5
+  border 1px solid #E1E1E8
+  border-radius 3px
+pre
+  $pre()
+  code
+    background-color inherit
+    padding 0
+    border 0
+    border-radius 0
