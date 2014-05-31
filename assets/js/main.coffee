@@ -3,6 +3,7 @@ require.config(
     underscore: '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min'
     Backbone: '//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min'
     jquery: '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min'
+    Share: '/js/share.min'
   shim:
     underscore:
       exports: '_'
@@ -14,7 +15,8 @@ require.config(
 require [
   'jquery',
   'Backbone',
-], ($, Backbone) ->
+  'Share',
+], ($, Backbone, Share) ->
 
   ###*
    * display page
@@ -74,6 +76,26 @@ require [
     render: ->
       hide()
       display(currentPost.get("id"))
+
+      config = {
+        title: $("##{currentPost.get("id")} .title").text()
+        description: "Check out this blog post by Henry Snopek"
+        ui: {
+          flyout: 'middle right'
+        }
+        networks:
+          twitter:
+            description: "Check out this blog post by Henry Snopek"
+          facebook:
+            description: "Check out this blog post by Henry Snopek"
+          pinterest:
+            description: "Check out this blog post by Henry Snopek"
+          email:
+            description: "Check out this blog post by Henry Snopek"
+      }
+      new Share('.share-button', config)
+
+
 
 
   class router extends Backbone.Router
