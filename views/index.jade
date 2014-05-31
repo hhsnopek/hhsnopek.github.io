@@ -12,7 +12,9 @@ block content
     div(id=link).post
       h2.title= name
       time.date= date
-      != content
+      #content
+        != content
+      .share-button
 
   .sidebar
     #profile
