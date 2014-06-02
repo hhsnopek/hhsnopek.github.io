@@ -1,0 +1,108 @@
+#city-to-city
+  height 100px
+  margin-top 2em
+  margin-bottom 2em
+  li
+    display inline-block
+  li:nth-of-type(2)
+    line-height 100px
+    vertical-align top
+
+#home
+  height 100px
+  width 100px
+  background-color sky-blue
+  border-radius 9999px
+  overflow hidden
+
+  #sun
+    position relative
+    top 20px
+    left 55px
+    width 20px
+    height 20px
+    background-color yellow
+    border-radius 9999px
+
+  #house
+    display inline-block
+    background-color maroon
+    height 40px
+    width 40px
+    margin-top 40px
+    margin-left 15px
+
+    #roof
+      height 0
+      width 0
+      border-style solid
+      border-width 0 28px 20px 28px
+      border-color transparent transparent #670000 transparent
+      margin-top -18px
+      margin-left -8px
+
+    .window
+      display inline-block
+      height 6px
+      width 6px
+      background-color white
+      margin-top 4px
+      margin-left 9px
+
+    .window:nth-of-type(1)
+      margin-left 5px
+
+    #door
+      display inline-block
+      height 15px
+      width 10px
+      margin-left 15px
+      margin-top 5px
+      background-color #ddd
+
+  #garage
+    display inline-block      
+    height 30px
+    width 30px
+    background-color maroon
+    margin-left 0
+    border-left 1px solid #670000
+
+
+#nyc
+  background-color #483078
+  height 100px
+  width 100px
+  border-radius 9999px
+  overflow hidden
+
+  .building
+    display inline-block
+    margin-top -10px
+    margin-left 35px
+    height 110px
+    width 50px
+    border 2px solid dark-gray
+    background-color gray
+    text-align center
+
+    &:last-of-type
+      margin-top -104px
+      margin-left 9px
+      height 100px
+      width 50px
+
+    .window
+      display inline-block
+      margin 2px
+      height 6px
+      width 6px
+      background-color white
+
+    #doors
+      display inline-block
+      height 15px
+      width 25px
+      margin-top 1px
+      background-color white
+
