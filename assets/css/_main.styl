@@ -1,0 +1,38 @@
+.main
+  background-color #fff
+  height 100%
+  box-shadow inset 2px 0px 5px -2px #888
+  overflow-y scroll
+  font-family 'Aileron' sans-serif
+  font-weight 400
+
+  #container
+    center(80%)
+    img
+      max-width 100%
+
+    #Blog
+      .item
+        reset-list()
+      .post
+        display none
+        #content
+          font-weight 300
+          li
+            margin-left 2.5em
+      .share-button
+        padding-top 4em
+        margin-bottom 2em
+      .title
+        margin-bottom 0
+
+  +above(1150px)
+    span(3/4)
+
+  +between(800px, 1150px)
+    span(2/3)
+
+  +below(800px)
+    stack()
+    overflow-y visible
+    border-top 2px solid lighten(grey, 50)

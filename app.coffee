@@ -11,7 +11,7 @@ rupture         = require('rupture')
 module.exports =
   ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore']
 
-  extensions: [new DynamicContent]
+  extensions: [DynamicContent()]
 
   stylus:
     use: [axis(), rupture(), jeet(), autoprefixer()]
