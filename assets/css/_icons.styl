@@ -2,11 +2,20 @@
   height 100px
   margin-top 2em
   margin-bottom 2em
+
   li
     display inline-block
+
   li:nth-of-type(2)
     line-height 100px
     vertical-align top
+
+  +below(900px)
+    display none
+  +below(800px)
+    display block
+  +below(600px)
+    display none
 
 #home
   height 100px
@@ -61,13 +70,12 @@
       background-color #ddd
 
   #garage
-    display inline-block      
+    display inline-block
     height 30px
     width 30px
     background-color maroon
     margin-left 0
     border-left 1px solid #670000
-
 
 #nyc
   background-color #483078
@@ -105,4 +113,3 @@
       width 25px
       margin-top 1px
       background-color white
-
