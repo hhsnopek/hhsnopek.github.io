@@ -24,7 +24,6 @@ require [
   ###
   display = (page) ->
     pagenation.set("currentpage", page)
-    console.log "Displaying #{page}\n"
 
     if typeof page is 'undefined' or page is null
       $("#list").css('display', 'block')
@@ -40,13 +39,10 @@ require [
   ###
   hide = ->
     page = pagenation.get("currentpage")
-    console.log "Previous page: #{page}"
 
     if typeof page is 'undefined' or page is null
-      console.log "Hiding nothing"
     else
       $("##{page}").css('display', 'none')
-      console.log "Hiding: #{page}"
 
 
   ###*
@@ -94,8 +90,6 @@ require [
             description: "Check out this blog post by Henry Snopek"
       }
       new Share('.share-button', config)
-
-
 
 
   class router extends Backbone.Router

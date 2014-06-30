@@ -42,7 +42,50 @@ block content
     #container
       #Blog
         ul#list
-          each post in site.posts
-            +blogItem(post.title, post.link, post.date, post.summary)
+          ul.item
+            li: h2.title: a(href="/#about") About
+            li: p.summary
+              | I currently attend Carroll University for a Bachelors Degree in Computer Science. I take my coffee black and enjoy a morning run...
+
+          - for post in sort(site.posts, {by: 'date'})
+            if (post._render == false)
+              continue
+            else
+              +blogItem(post.title, post.link, post.date, post.summary)
+
+        #about.post
+          h2.title About
+          #content
+            p I currently attend Carroll University for a Bachelors Degree in Computer Science. I take my coffee black and enjoy a morning run, while I spend my free time playing soccer, ping pong and hanging with the people I love. Always ready to take a challenge and present a product of the finest, I develop for the future.
+
+            h3 Langauges:
+            ul#langs
+              li: a(href='http://coffeescript.org/') Coffeescript
+                span ,
+                a(href='http://www.ecmascript.org/')  Javascript
+              li: a(href='http://learnboost.github.io/stylus/') Stylus
+                span ,
+                a(href='http://www.w3.org/Style/CSS/')  Css
+              li: a(href='http://jade-lang.com/') Jade
+                span ,
+                a(href='http://www.whatwg.org/specs/web-apps/current-work/multipage/')  Html
+              li: a(href='http://nodejs.org/') Node.js
+
+            h3 Work History
+            ul#work
+              li
+                .job Carroll University - IT Help Desk
+                .desc - Assist students & faculty with computer problems.
+              li
+                .job Target - Electronics/Presentation Team Member
+                .desc - Assist Guest with product advice and differentiation.
+                .desc - Set up aisles for new product.
+              li
+                .job Best Buy - Personal Electronics Retailer
+                .desc - Sell products (mp3, car electronics, cameras & camcorders).
+
         each post in site.posts
-          +post(post.title, post.link, post.date, post.content)
+          if (post._render == false)
+            continue
+          else
+            +post(post.title, post.link, post.date, post.content)
