@@ -9,22 +9,24 @@ block content
       li: p.summary:= summary
 
   mixin post(name, link, date, content)
-    div(id=link).post
-      h2.title= name
-      time.date= date
-      #content
+    div(id=link itemscope itemprop='http://schema.org/BlogPosting').post
+      h2.title(itemprop='name')= name
+      time.date(itemprop='datePublished')= date
+      #content(itemprop='articleBody')
         != content
       .share-button
 
   .sidebar
-    #profile
-      h1#name: a(href='/') Henry Snopek
-      img(src='/img/profile.jpg')#pic
+    #profile(itemscope itemprop='http://schema.org/Person')
+      h1#name(itemprop='name'): a(href='/') Henry Snopek
+      img(src='/img/profile.jpg' itemprop='image')#pic
       #location
         include ../assets/img/location.svg
-        h3 Waukesha, WI
-      p#short Web Developer, Programmer, & University Student
-      p#job Developer Intern @
+        h3(itemprop='workLocation') Waukesha, WI
+      p#short(itemprop='description') Web Developer, Programmer, & University Student
+      p#job
+        span(itemprop='jobTitle') Developer Intern
+        span  @
         a(href='//carrot.is/creative')  Carrot Creative
       ul#media
         li: a(href='//plus.google.com/108972071032975834000?prsrc=3')#g
@@ -40,7 +42,7 @@ block content
 
   .main
     #container
-      #Blog
+      #Blog(itemscope itemprop='http://schema.org/Blog')
         ul#list
           ul.item
             li: h2.title: a(href="/#about") About
