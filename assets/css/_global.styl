@@ -9,6 +9,7 @@ a
   text-decoration none
   transition color .25s cubic-bezier(0.455, 0.03, 0.515, 0.955)
   color blue
+
 a:hover
   color #34495e
 
@@ -32,11 +33,16 @@ pre
     border 0
     border-radius 0
 
-
 *
   margin 0
   padding 0
   box-sizing border-box
+
+  &::selection
+    background-color light-blue
+
+  &::-moz-selection
+    background-color light-blue
 
 html, body
   width 100%
