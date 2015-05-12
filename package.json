@@ -1,0 +1,20 @@
+{
+  "name": "hhsnopek",
+  "description": "Website, Portfolio & Blog | hhsnopek.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hhsnopek/hhsnopek.github.io"
+  },
+  "dependencies": {
+    "autoprefixer-stylus": "^0.6.0",
+    "axis": "^0.3.2",
+    "coffee-script": "^1.9.2",
+    "dynamic-content": "^0.2.1",
+    "jade": "^1.9.2",
+    "marked": "^0.3.3",
+    "moment": "^2.10.2",
+    "roots-browserify": "^0.3.2",
+    "rupture": "^0.6.1",
+    "stylus": "^0.51.1"
+  }
+}

@@ -1,1 +1,4 @@
-ship-tmp
+.DS_Store
+*.log
+public/
+node_modules/

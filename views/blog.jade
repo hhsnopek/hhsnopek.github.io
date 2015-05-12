@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  ul#blog-list
+    each post in sort(site.blog, {by: 'date'}).slice(0, 4)
+      - if (post._render !== undefined) continue
+        li.post
+          a(href= post._url): h3= post.title
+          date= humanDate(post.date)
+          p.summary= post.summary

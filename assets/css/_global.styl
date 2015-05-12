@@ -1,0 +1,28 @@
+normalize-css()
+
+body
+  background: #fdfaf7
+  font-family: 'Source Sans Pro', sans-serif
+  color: gray
+  margin: 2em 0 4em 0
+
+  +below(600px)
+    margin: 1em 0 2em 0
+
+a
+  color: gray
+  hover-lighten(20%)
+
+#about, #blog-list, #projects-list, #blog-post
+  width: 60%
+  margin-left: 50%
+  transform: translate(-50%, 0)
+  font-family: 'Merriweather', serif
+
++below(1000px)
+  #about
+    width: 80%
+
++below(800px)
+  #blog-list, #projects-list, #blog-post
+    width: 80%
