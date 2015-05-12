@@ -21,9 +21,9 @@ module.exports =
     clean_urls: true
 
   locals:
-    title: "Henry Snopek - Web Developer, Programmer, & University Student"
+    title: "Henry Snopek - Web Developer, Programmer & University Student"
     author: "Henry Snopek"
-    description: "Web Developer, Programmer, & University Student"
+    description: "Web Developer, Programmer & University Student"
 
     humanDate: (date) ->
       moment(date).format("MMMM DD, YYYY")
