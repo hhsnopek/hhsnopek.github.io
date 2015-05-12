@@ -13,6 +13,7 @@
     "jade": "^1.9.2",
     "marked": "^0.3.3",
     "moment": "^2.10.2",
+    "roots": "^3.0.4",
     "roots-browserify": "^0.3.2",
     "rupture": "^0.6.1",
     "stylus": "^0.51.1"
