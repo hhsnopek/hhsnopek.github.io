@@ -9,7 +9,16 @@ moment = require 'moment'
 module.exports =
   ignores: ['README.md', '**/*layout.*', '**/_*', '.gitignore', '.DS_Store']
 
-  extensions: [dynamicContent()]
+  extensions: [
+    dynamicContent()
+    browserify(
+      files: [
+        'assets/js/tracking.coffee',
+        'assets/js/main.coffee'
+      ],
+      out: 'js/build.js'
+    )
+  ]
 
   stylus:
     use: [axis(), rupture(), autoprefixer()]
@@ -21,7 +30,6 @@ module.exports =
     clean_urls: true
 
   locals:
-    title: "Henry Snopek - Web Developer, Programmer & University Student"
     author: "Henry Snopek"
     description: "Web Developer, Programmer & University Student"
 
