@@ -1,5 +1,4 @@
 # hhsnopek.com
-
 My website, portfolio & blog
 
 ## development
