@@ -1,3 +1,5 @@
+hljs = require 'highlight.js'
+
 do ->
   urlPath = document.URL.split('/').slice(3)
 
@@ -9,3 +11,5 @@ do ->
   else
     document.title =
       urlPath.toString().charAt(0).toUpperCase() + urlPath.toString().slice(1)
+
+hljs.initHighlightingOnLoad()

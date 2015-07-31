@@ -46,7 +46,8 @@ module.exports =
         fn = (a, b) -> if (a[opts.by] < b[opts.by]) then -1 else 1
 
       if opts.by == 'date'
-        fn = (a,b) -> if (new Date(a[opts.by]) > new Date(b[opts.by])) then -1 else 1
+        fn = (a,b) ->
+          if (new Date(a[opts.by]) > new Date(b[opts.by])) then -1 else 1
 
       if opts.fn then fn = opts.fn
 

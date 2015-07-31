@@ -10,11 +10,13 @@
     "axis": "^0.3.2",
     "coffee-script": "^1.9.2",
     "dynamic-content": "^0.2.1",
+    "highlight.js": "^8.6.0",
     "jade": "^1.9.2",
+    "jstransformer-marked": "0.0.2",
     "marked": "^0.3.3",
     "moment": "^2.10.2",
     "roots": "^3.0.4",
-    "roots-browserify": "^0.3.2",
+    "roots-browserify": "0.3.2",
     "rupture": "^0.6.1",
     "stylus": "^0.51.1"
   }

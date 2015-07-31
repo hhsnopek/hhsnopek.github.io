@@ -1,0 +1,38 @@
+---
+title: "ES6, Babel & Browserify, Oh my!"
+date: 2015/06/29
+summary: "How to use ES6, Babel & Browserify... or The struggle of using ES6, polyfills and Browserify."
+---
+
+extends ../views/blog-layout
+
+block content
+  :marked
+    ## ES6, Babel & Browserify, Oh my!
+    
+    *Published on July 1, 2015*
+    
+    At Carrot Creative we are strong CoffeeScript users, using it for just about everything. Recently my collegue and I have taken over the next launch of [carrot/share-button][0], version 1.0.0. With the next version we've switched from CoffeeScript over to ES6. Using [Babel][1] to transpile the source, using [zloirock/core-js][2] for minimal polyfills and [Browserify][3] w/[Gulp][4] to ease the build process and bundle everything together.
+    
+    After translating to ES6 from Coffeescript we created our initial gulpfile, which contained zero polyfills and used the Babel transpiler. We kept our previous structure of seperating our IE9 classList polyfill, from ShareButton and ShareUtils. After a quick realization, we needed to do more than just transpile our source. After serveral iterations we stubbled onto browser-polyfill.js from the [babel-core][5]. After concatting all the files together we had a whopping file that was bigger than jQuery (2.1.4).
+    
+    ![First Minified ShareButton, 128 KB](https://cldup.com/rIYy4INIs5.png)
+    
+    Clearly we had to remove this polyfill and only require what's nessecary for ShareButton. Low and behold [core-js][2] allows us to require specific shims via [CommonJS][6]. The only problem is that we have to mix es6 modules `import`s with CommonJS `require`s. This immediately reduced our code after compile to 67Kb.
+    
+    ![Second Minified ShareButton, 67 KB](https://cldup.com/59MStoOQqy.png)
+    
+    
+    
+    ```javascript
+    let hello = "john";
+    ```
+    
+    
+    [0]: //github.com/carrot/share-button
+    [1]: //babeljs.io
+    [2]: //github.com/zloirock/core-js
+    [3]: //browserify.org
+    [4]: //gulpjs.com
+    [5]: //github.com/babel/babel
+    [6]: //wiki.commonjs.org/wiki/Modules/1.1
