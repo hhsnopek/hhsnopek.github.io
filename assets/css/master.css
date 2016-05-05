@@ -1,0 +1,53 @@
+:root {
+  --white: #eee;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+	font-family: 'Lato', sans-serif;
+  background: url('/img/mtn.jpeg') fixed right no-repeat;
+  background-size: cover;
+  align-items: center;
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 300;
+  text-shadow: 2px 2px 2px #333;
+}
+
+h1, h2 {
+  font-weight: 300;
+}
+
+#content {
+  width: 100%;
+  text-align: center;
+  padding: .5em;
+}
+
+#content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#content ul li {
+  display: inline-block;
+  padding: 0 .25em;
+}
+
+#content ul li a {
+  color: var(--white);
+  border-bottom: 1px solid var(--white);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 800px) {
+  #content {
+    width: 70%;
+  }
+}

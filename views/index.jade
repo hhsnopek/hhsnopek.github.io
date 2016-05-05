@@ -1,10 +1,13 @@
 extends layout
 
 block content
-  ul#blog-list
-    each post in sort(site.blog, {by: 'date'})
-      - if (post._render !== undefined) continue
-        li.post
-          a(href= post._url): h3= post.title
-          date= humanDate(post.date)
-          p.summary= post.summary
+  #content
+    h1 Henry Snopek
+    h2 Web Developer, Programmer & Coffee Enthusiast
+    p With a cup of coffee in hand, I'll take on any challenge.
+
+    nav: ul
+      li: a(href='//medium.com/@hhsnopek') Blog
+      li: a(href='//github.com/hhsnopek') Github
+      li: a(href='//twitter.com/hhsnopek') Twitter
+      li: a(href='//instagram.com/snowpecker') Instagram
