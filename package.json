@@ -6,19 +6,8 @@
     "url": "https://github.com/hhsnopek/hhsnopek.github.io"
   },
   "dependencies": {
-    "autoprefixer": "^6.3.5",
-    "coffee-script": "^1.9.2",
-    "doiuse": "^2.3.0",
-    "dynamic-content": "^0.2.1",
-    "jade": "^1.9.2",
-    "lost": "^6.7.2",
-    "marked": "^0.3.3",
-    "moment": "^2.10.2",
-    "postcss": "^5.0.19",
-    "postcss-cssnext": "^2.5.1",
+    "postcss-cssnext": "2.5.x",
     "postcss-font-magician": "^1.4.0",
-    "postcss-responsive-images": "^1.0.2",
-    "roots": "^3.0.4",
-    "roots-browserify": "^0.3.2"
+    "roots-mini": "0.x.x"
   }
 }
