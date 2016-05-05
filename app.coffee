@@ -1,6 +1,4 @@
-imprt = require 'postcss-import'
 cssnext = require 'postcss-cssnext'
-filters = require 'postcss-instagram'
 fonts = require 'postcss-font-magician'
 
 browserify = require 'roots-browserify'
@@ -29,9 +27,7 @@ module.exports =
 
   postcss:
     use: [
-      imprt(),
       cssnext(),
-      filters(),
       fonts()
     ]
 
