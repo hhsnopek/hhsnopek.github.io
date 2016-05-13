@@ -8,6 +8,6 @@
   "dependencies": {
     "postcss-cssnext": "2.5.x",
     "postcss-font-magician": "^1.4.0",
-    "roots-mini": "0.x.x"
+    "spike": "0.x.x"
   }
 }

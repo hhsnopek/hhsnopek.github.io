@@ -1,7 +1,7 @@
-import cssnext from 'postcss-cssnext'
-import fonts from 'postcss-font-magician'
+const cssnext = require('postcss-cssnext')
+const fonts = require('postcss-font-magician')
 
-export default {
+module.exports = {
   postcss: {
     plugins: [cssnext, fonts]
   },
