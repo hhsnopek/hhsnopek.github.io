@@ -1,4 +1,5 @@
 #holo {
+  display: none;
   position: absolute;
   height: 65%;
   width: 26%;
@@ -6,7 +7,6 @@
   right: 0;
   z-index: 2;
   opacity: 0;
-
 }
 
 #holo.active {
@@ -91,6 +91,12 @@
 
 .info .val {
   margin-left: .25em;
+}
+
+@media screen and (min-width: 1200px) {
+  #holo {
+    display: block;
+  }
 }
 
 @keyframes blink {
