@@ -1,0 +1,139 @@
+#holo {
+  position: absolute;
+  height: 65%;
+  width: 26%;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  opacity: 0;
+
+}
+
+#holo.active {
+  animation: blink 2s linear forwards;
+  opacity: 1;
+}
+
+.spinner {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  height: 6em;
+  width: 6em;
+  border: 1px solid var(--white);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: clockwise 3s linear infinite;
+}
+
+.spinner .inner {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 5em;
+  width: 5em;
+  border: 1px solid var(--white);
+  border-left-color: transparent;
+  border-radius: 50%;
+  animation: clockwise-centered 2s linear reverse infinite;
+}
+
+.spinner .inner .inner2 {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 4em;
+  width: 4em;
+  border: 2px solid var(--white);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: clockwise-centered 4.5s linear infinite;
+}
+
+.info .age {
+  position: absolute;
+  left: -2.5em;
+  margin-right: 2em;
+  border-bottom: 1px solid var(--white);
+}
+
+.info .age:after {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  right: -2em;
+  width: 1em;
+  height: 1em;
+  border-bottom: 1px solid var(--white);
+  transform: rotateZ(35deg);
+}
+
+.info .height {
+  position: absolute;
+  top: 10%;
+  left: -2.5em;
+  width: 2em;
+  height: 80%;
+  border-right: 1px solid var(--white);
+}
+
+.info .height span {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  white-space: nowrap;
+  margin-right: .25em;
+}
+
+.info .val {
+  margin-left: .25em;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.75;
+  }
+  65% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes clockwise {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes clockwise-centered {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}

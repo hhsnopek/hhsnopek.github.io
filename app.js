@@ -1,9 +1,10 @@
 const cssnext = require('postcss-cssnext')
 const fonts = require('postcss-font-magician')
+const prefix = require('autoprefixer')
 
 module.exports = {
   postcss: {
-    plugins: [cssnext, fonts]
+    plugins: [cssnext, fonts, prefix]
   },
   locals: {
     author: 'Henry Snopek',
