@@ -1,0 +1,82 @@
+==================================================================
+https://keybase.io/hhsnopek
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://hhsnopek.com
+  * I am hhsnopek (https://keybase.io/hhsnopek) on keybase.
+  * I have a public key with fingerprint 3C35 9B9E 808F 8280 1726  FFE6 27FD E7B5 BCE2 0423
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01202a0eb89072f979443c75a67301f8db47d0185336bfe995e74303ecb57282d2b50a",
+            "fingerprint": "3c359b9e808f82801726ffe627fde7b5bce20423",
+            "host": "keybase.io",
+            "key_id": "27fde7b5bce20423",
+            "kid": "0101ac11b7d34d61e18256450ef5cf815417ebdc1cbbdcba14c062d2717508a1491f0a",
+            "uid": "c38eea7fe088e44ca692f4a81de61400",
+            "username": "hhsnopek"
+        },
+        "revoke": {
+            "sig_ids": [
+                "73a013b414b05c70cb66ba0e1398e6a610c25251618ce14ab0046a4dfbed89c30f"
+            ]
+        },
+        "service": {
+            "hostname": "hhsnopek.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1472822436,
+    "expire_in": 157680000,
+    "prev": "92d67a377bf57c65fce306a38584da4c43240ec2129945e1fa3deae98f0f7688",
+    "seqno": 21,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.56
+Comment: https://keybase.io/crypto
+
+yMOxAnicbZJtUBVVGMcvJoziOPGSJjLhuFK+IZ2ze3bP2avVCI1mM4UiIwnSdc/Z
+c2C7cO/17oUC9UNjMRrma6CSb2OMWljqTIwG8nLNnMzICTXGalBqEsXUxKjRYmyX
+yS9N+2F3zu7/+T2/fc45NfYRT3zM1KG+phM/jZwSczb6e7kn/8yqhpUSDZqVknel
+5OfDD15qcjvi81um5JUAlIFsAE6JDrAsdKwjpDCsGhpWABTEpAibABJVUTQquK6r
+HCMFKJxRFctENmWqAkPKkIQVKObhUNgKRByswhRVpzongAgiEwCxrAnBNRkLk2Oq
+UsZlgGTFKSwJ2m6FI0cNm2daQeeds/AN6/1P/qE3gAaDkGJTQaYGOSSyqiEVcKEy
+QaCKIObUZJBR504NiBjQHFsMsQqIs9ShGPYuH8YxhXBuYMEBIRwhZmi6LJBBoMk1
+iABwgzYPB4wy7qRLSuxAMMT90uoMKcwrgn7uztW2ih1pW/IWSlgxAFQogogClWHA
+qKZRZ8pQ0QnXDA0CJquyCjVIGIfIoAAgzUCmoNwkOlOAkIocttOxwmLDcHdK/+me
+yYJljlcoHIwEWbDU/RKJhGyvaxWpDLnR1zn1/QvxUStgOnvkVFTwsG0FA5IXOkkW
+sVwqRO5uykjRMiT+RsgKc5/lJlSsEeBcbh9e4SB12dSwoWBMhYqZpgrGFaAZClEJ
+Mg3EkCIjwJkMZV1HKofCUExucJ0IIBwWkdzfWhEISl4ZOp5GscN0JhcwIuVhLq0+
+GV020hMT74mLHeEeXk/86ISHRzpUmODZ17Oh8Nu9sVcSKl4Yu37e/LspKW+WNWTZ
+16KXeqb0XTldlNrdPXFFW9bE7D2seUlbHTkgDR3f+dqFm7dqPdPLZ/65vcB7vPbO
+gXcemH/FXL6XY1hTuzrlsrY7V2f3Kr0eXrggGnuxeNzig/50q/9wWlxpSkHjmeaB
+rqeO9ectuZ39S8P5r2bl3nv7u59Tsxe16+sGohs7x509eD/vg0PPHH/x1o26y2PS
+22Nj8ZOLLsrdub9aF3v7v2jtq+scb3VnNN9c81jiCe+RSnxrRl74+x2pGYu6f+i9
+Wj9zW17V+6uSi2Kbk2/cG1GfMLfgRt/ad6+1Tzgy6fwyPUPsHvTt35k2d8YTMZE1
+X3+ybf9HdUkv7dvQkxjdZjTujq6tLqld06iOjc8Jjf7y5qkZ47Xt1a17l2f2d7wF
+Zu7wnq6bfTJ5Uubmwc6Ps44uPbp1zKYVr9SCabPSQx0+nLiuZnJBT2//4YHrvxXP
+KU+tLDiRtPhuvnzIX3q3fvkfzw62N6UdS5p7ur18zuNZpVWb46rjqoYOic8nNOaP
+qm7KMZJSLpRkh8JbCpfmd/34IKWvo64huPDcwN49Na2DT18Quc/vaqrJWf+ZndYR
+erno00c7dn64dX2nvWTX3wtsej+xoL7l1R5xaU9XcsuVloWj2wYaxeTlZP57x2qq
+Ru5Oapk0bWhd5bzWU7evT6fnDlz/5rkt03M3ZvpH/QMCBeGd
+=mXfc
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/hhsnopek
+
+==================================================================
+
