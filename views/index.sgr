@@ -1,0 +1,12 @@
+extends(src='_layout.sgr')
+  block(name='content')
+    main(role='main')#content
+      h1 Henry Snopek
+      h2 Web Developer, Programmer & Coffee Enthusiast
+      p With a cup of coffee in hand, I'll take on any challenge.
+
+      nav: ul
+        li: a(href='//medium.com/@hhsnopek') Blog
+        li: a(href='//github.com/hhsnopek') Github
+        li: a(href='//twitter.com/hhsnopek') Twitter
+        li: a(href='//instagram.com/snowpecker') Instagram

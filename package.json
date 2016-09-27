@@ -6,8 +6,11 @@
     "url": "https://github.com/hhsnopek/hhsnopek.github.io"
   },
   "dependencies": {
-    "postcss-cssnext": "2.5.x",
+    "cssnano": "^3.7.5",
+    "postcss-cssnext": "^2.8.0",
     "postcss-font-magician": "^1.4.0",
-    "spike": "0.x.x"
+    "reshape-standard": "^0.4.0",
+    "spike": "^0.12.1",
+    "sugarss": "^0.1.6"
   }
 }

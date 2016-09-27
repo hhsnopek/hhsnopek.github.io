@@ -1,14 +1,28 @@
-const cssnext = require('postcss-cssnext')
+const sugarss = require('sugarss')
 const fonts = require('postcss-font-magician')
-const prefix = require('autoprefixer')
+const cssnano = require('cssnano')
+const cssnext = require('postcss-cssnext')
+const html = require('reshape-standard')
+const locals = {
+  author: 'Henry Snopek',
+  description: 'Web Developer, Programmer & Coffee Enthusiast'
+}
 
 module.exports = {
-  postcss: {
-    plugins: [cssnext, fonts, prefix]
+  matchers: {
+    html: '*(**/)*.sgr',
+    css: '*(**/)*.sss'
   },
-  locals: {
-    author: 'Henry Snopek',
-    description: 'Web Developer, Programmer & Coffee Enthusiast'
+  postcss: {
+    parser: sugarss,
+    plugins: [fonts, cssnext({ warnForDuplicates: false }), cssnano]
+  },
+  reshape: (ctx) => {
+    return html({
+      webpack: ctx,
+      locals: locals,
+      minify: true
+    })
   },
   ignore: [
     'README.md',
