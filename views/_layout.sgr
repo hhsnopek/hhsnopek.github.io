@@ -17,5 +17,4 @@ html
 
   body
     block(name='content')
-
-    script(type='text/javascript' src='/js/main.js')
+    block(name='javascript')

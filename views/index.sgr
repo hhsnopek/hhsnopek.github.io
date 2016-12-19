@@ -10,3 +10,11 @@ extends(src='_layout.sgr')
         li: a(href='//github.com/hhsnopek') Github
         li: a(href='//twitter.com/hhsnopek') Twitter
         li: a(href='//instagram.com/snowpecker') Instagram
+
+  block(name='javascript' type='append')
+    script(type='text/javascript').
+      var links = document.querySelectorAll('nav ul li');
+      analytics.trackLink(links[0], 'Clicked Blog');
+      analytics.trackLink(links[1], 'Clicked Github');
+      analytics.trackLink(links[2], 'Clicked TWitter');
+      analytics.trackLink(links[3], 'Clicked Instagram');
