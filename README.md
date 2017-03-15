@@ -1,4 +1,6 @@
 # hhsnopek.com
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/hhsnopek/hhsnopek.github.io.svg)](https://greenkeeper.io/)
 My website, portfolio & blog
 
 ## Setup
