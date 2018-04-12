@@ -5,12 +5,14 @@
     "type": "git",
     "url": "https://github.com/hhsnopek/hhsnopek.github.io"
   },
-  "dependencies": {
+  "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "postcss": "^6.0.21",
+    "postcss-cli": "^5.0.0",
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6",
     "cssnano": "^3.9.1",
-    "postcss-cssnext": "^2.9.0",
     "postcss-font-magician": "^1.5.0",
-    "reshape-standard": "^0.4.2",
-    "spike": "^0.13.0",
     "sugarss": "^0.2.0"
   }
 }
