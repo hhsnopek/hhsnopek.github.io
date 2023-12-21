@@ -8,7 +8,6 @@ extends(src='_layout.sgr')
       nav: ul
         li: a(href='//medium.com/@hhsnopek') Blog
         li: a(href='//github.com/hhsnopek') Github
-        li: a(href='//twitter.com/hhsnopek') Twitter
         li: a(href='//instagram.com/snowpecker') Instagram
 
   block(name='javascript' type='append')
@@ -16,5 +15,4 @@ extends(src='_layout.sgr')
       var links = document.querySelectorAll('nav ul li');
       analytics.trackLink(links[0], 'Clicked Blog');
       analytics.trackLink(links[1], 'Clicked Github');
-      analytics.trackLink(links[2], 'Clicked TWitter');
       analytics.trackLink(links[3], 'Clicked Instagram');
